@@ -1,2 +1,2 @@
-# Trabalho1-Programa-o-Web
+# Trabalho1-Programação-Web
 Desenvolver um site para um professor controlar diversos itens.
