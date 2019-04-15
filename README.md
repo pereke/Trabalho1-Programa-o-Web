@@ -5,8 +5,11 @@ O Presente projeto tem por objetivo a criação de um sistema WEB para um docent
 
 ## Tecnologias Utilizadas
 **Front-End**
+
 **Vue**: Vue é um **framework progressivo** para a construção de interfaces de usuário. Ao contrário de outros frameworks monolíticos, Vue foi projetado desde sua concepção para ser adotável incrementalmente. A biblioteca principal é focada exclusivamente na camada visual (view layer), sendo fácil adotar e integrar com outras bibliotecas ou projetos existentes. Por outro lado, Vue também é perfeitamente capaz de dar poder a sofisticadas Single-Page Applications quando usado em conjunto com **ferramentas modernas** e **bibliotecas de apoio**. fonte: <https://br.vuejs.org/v2/guide/index.html>
+
 **Back-End**
+
 **Ruby on Rails**:Rails é uma estrutura de desenvolvimento de aplicativos da web escrita na linguagem de programação Ruby. Foi projetado para facilitar a programação de aplicativos da WEB, fazendo suposições sobre o que todo desenvolvedor precisa para começar. Permite que você escreva menos código enquanto realiza mais do que muitas outras linguagens e frameworks. Desenvolvedores experientes do Rails também relatam que isso torna o desenvolvimento de aplicativos da Web mais divertido. fonte: <https://guides.rubyonrails.org/getting_started.html>.
 
 ##  Política de uso do git
