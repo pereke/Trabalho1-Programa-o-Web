@@ -22,3 +22,25 @@ O Presente projeto tem por objetivo a criação de um sistema WEB para um docent
 2. **Branch**: Existem dois tipos de branches sem citar a master. Branch de teste, que representa a branch em que as funcionalidades commitadas passam por testes, formalizando conclusões sobre a necessidade de correções,  se a funcionalidade desenvolvida acrescenta algo ao sistema ou se está de acordo com os requesistos documentados no backlog. Branch da iteracão, que possui um backup da master, é nela em que as funcionalidades criadas e testadas são integradas ao restante do sistema, observando qualquer incoerência ou conflito com o que já foi desenvolvido e suficientemente testado. 
 
 3. **Master**: Na master estará localizado a ultima versão estável do sistema. A merge é protegida, portanto, com exceção do dono do projeto, commits diretamente na merge são bloqueados e devem passar por uma revisão de código por parte do dono do projeto. A master armazena o código que será referenciando na baseline do sistema.
+
+## Instalação
+
+1. Instale o yarn na sua máquina:
+
+<https://yarnpkg.com>
+
+2. Adicione o bundler utilizando o gem:
+
+` gem install bundler`
+
+3. Crie e migre os bancos de dados utilizando o rails
+
+`rails db:create db:migrate`
+
+4. Rode o bundle
+
+`bundle install`
+
+5. Rode o yarn:
+
+`bin/yarn install`

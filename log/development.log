@@ -1,0 +1,535 @@
+Started GET "/" for 127.0.0.1 at 2019-04-24 10:23:13 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/Trabalho1-Programacao-Web" for 127.0.0.1 at 2019-04-24 10:29:26 -0300
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.2.3) lib/active_record/migration.rb:579:in `check_pending!'
+activerecord (5.2.3) lib/active_record/migration.rb:556:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (146.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (113.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idAluno" varchar, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (98.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424133510)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (90.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135118)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135118_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135118"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (119.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (103.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-24 13:51:53.522379"], ["updated_at", "2019-04-24 13:51:53.522379"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (77.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Started GET "/Trabalho1-Programacao-Web" for ::1 at 2019-04-24 10:52:14 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+  
+ActionController::RoutingError (No route matches [GET] "/Trabalho1-Programacao-Web"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/aulas" for ::1 at 2019-04-24 10:52:23 -0300
+Processing by AulasController#index as HTML
+  Rendering aulas/index.html.erb within layouts/application
+  [1m[36mAula Load (0.3ms)[0m  [1m[34mSELECT "aulas".* FROM "aulas"[0m
+  ↳ app/views/aulas/index.html.erb:16
+  Rendered aulas/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 1679ms (Views: 1673.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/aulas/new" for ::1 at 2019-04-24 10:52:28 -0300
+Processing by AulasController#new as HTML
+  Rendering aulas/new.html.erb within layouts/application
+  Rendered aulas/_form.html.erb (193.0ms)
+  Rendered aulas/new.html.erb within layouts/application (194.6ms)
+Completed 200 OK in 263ms (Views: 249.3ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/aulas" for ::1 at 2019-04-24 10:52:48 -0300
+Processing by AulasController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"blxHfdrvDkGamp2PgtYwhaKDl8+6FsFMw/CtRsh+3SLJUr87+mm4R2W338LHUKJh7msRBKModhMx8Z9PznPUag==", "aula"=>{"nomeAula"=>"Aleluia", "categoria"=>"Mandarim", "quantidade"=>"6"}, "commit"=>"Create Aula"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/aulas_controller.rb:30
+  [1m[36mAula Create (0.6ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aleluia"], ["categoria", "Mandarim"], ["quantidade", 6], ["created_at", "2019-04-24 13:52:48.909419"], ["updated_at", "2019-04-24 13:52:48.909419"]]
+  ↳ app/controllers/aulas_controller.rb:30
+  [1m[35m (131.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/aulas_controller.rb:30
+Redirected to http://localhost:3000/aulas/1
+Completed 302 Found in 143ms (ActiveRecord: 131.8ms)
+
+
+Started GET "/aulas/1" for ::1 at 2019-04-24 10:52:49 -0300
+Processing by AulasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAula Load (0.3ms)[0m  [1m[34mSELECT  "aulas".* FROM "aulas" WHERE "aulas"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/aulas_controller.rb:67
+  Rendering aulas/show.html.erb within layouts/application
+  Rendered aulas/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 84ms (Views: 68.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/aulas" for ::1 at 2019-04-24 10:52:56 -0300
+Processing by AulasController#index as HTML
+  Rendering aulas/index.html.erb within layouts/application
+  [1m[36mAula Load (0.3ms)[0m  [1m[34mSELECT "aulas".* FROM "aulas"[0m
+  ↳ app/views/aulas/index.html.erb:16
+  Rendered aulas/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 80ms (Views: 77.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-24 10:53:55 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:16
+  Rendered projetos/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professor" for ::1 at 2019-04-24 10:54:05 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/professor"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/professores" for ::1 at 2019-04-24 10:54:11 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/professores"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/professors" for ::1 at 2019-04-24 10:54:13 -0300
+Processing by ProfessorsController#index as HTML
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 50ms (Views: 45.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/publicacaos" for ::1 at 2019-04-24 10:54:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/publicacaos"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publicacoes" for ::1 at 2019-04-24 10:54:42 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/publicacoes"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/publicacoess" for ::1 at 2019-04-24 10:54:44 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/publicacoess"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "aulas"[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (86.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (111.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (117.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (107.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idAluno" varchar, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (137.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (91.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (90.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (86.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (114.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-24 14:01:34.300023"], ["updated_at", "2019-04-24 14:01:34.300023"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (68.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23

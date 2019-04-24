@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nomeProjeto: MyString
+  inicio: 1
+  termino: 1
+  resumo: MyText
+
+two:
+  nomeProjeto: MyString
+  inicio: 1
+  termino: 1
+  resumo: MyText
