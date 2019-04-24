@@ -41,18 +41,6 @@
     margin-top: 144px !important;
   }
 
-  .pl-10{
-    padding-left: 160px !important;
-  }
-
-  .pr-20{
-    padding-right: 320px !important;
-  }
-
-  .pt-15{
-    padding-top: 240px !important;
-  }
-
   .v-input__slot {
     border:1px solid #E0E0E0 !important;
   }
