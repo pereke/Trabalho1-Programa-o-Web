@@ -47,7 +47,7 @@
 
   .imgFundo {
     /*background-image: url("../assets/imagem_home.jpg");*/
-    background-color:blueviolet;
+    /*background-color:blueviolet;*/
   }
 
 </style>
