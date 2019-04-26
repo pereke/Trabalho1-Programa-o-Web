@@ -1,8 +1,8 @@
 class CreateAlunosProjetos < ActiveRecord::Migration[5.2]
   def change
-    create_table :alunos_projetos, id: false do |t|
-      t.belongs_to :aluno, index: true
-      t.belongs_to :projeto, index: true
+    create_join_table :alunos, :projetos do |t|
+      t.index :aluno_id
+      t.index :projeto_id
     end
   end
 end

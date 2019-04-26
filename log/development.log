@@ -1279,3 +1279,897 @@ Processing by AlunosController#index as HTML
 Completed 200 OK in 40ms (Views: 38.5ms | ActiveRecord: 0.1ms)
 
 
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (26.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (84.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (74.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idAluno" varchar, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (77.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (82.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (105.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (92.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer, "projeto_id" integer)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (96.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-26 11:42:53.590342"], ["updated_at", "2019-04-26 11:42:53.590342"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (46.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Started GET "/alunos" for ::1 at 2019-04-26 08:45:17 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.5ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 5370ms (Views: 5242.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 08:45:26 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.5ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 59ms (Views: 29.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/projetos/new" for ::1 at 2019-04-26 08:45:28 -0300
+Processing by ProjetosController#new as HTML
+  Rendering projetos/new.html.erb within layouts/application
+  Rendered projetos/_form.html.erb (241.1ms)
+  Rendered projetos/new.html.erb within layouts/application (253.2ms)
+Completed 200 OK in 335ms (Views: 276.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projetos" for ::1 at 2019-04-26 08:45:43 -0300
+Processing by ProjetosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UyfMryn0Feqp5d4w+ET1jmjl405jEfidRZooeFD9TdT/DaXr1ZxTQO8rvaVaICIUJwEiOSb0wMWwmHRzew4QLQ==", "projeto"=>{"nomeProjeto"=>"Aleluia", "inicio"=>"1990", "termino"=>"1991", "resumo"=>"asxisgxuigsaxgaisx"}, "commit"=>"Create Projeto"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Aleluia"], ["inicio", 1990], ["termino", 1991], ["resumo", "asxisgxuigsaxgaisx"], ["created_at", "2019-04-26 11:45:43.170745"], ["updated_at", "2019-04-26 11:45:43.170745"]]
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+Redirected to http://localhost:3000/projetos/1
+Completed 302 Found in 69ms (ActiveRecord: 62.9ms)
+
+
+Started GET "/projetos/1" for ::1 at 2019-04-26 08:45:43 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 82ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 08:45:47 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 27ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos/1" for ::1 at 2019-04-26 08:45:49 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 28ms (Views: 26.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 08:45:51 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos/new" for ::1 at 2019-04-26 08:45:53 -0300
+Processing by ProjetosController#new as HTML
+  Rendering projetos/new.html.erb within layouts/application
+  Rendered projetos/_form.html.erb (4.7ms)
+  Rendered projetos/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 31ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projetos" for ::1 at 2019-04-26 08:46:09 -0300
+Processing by ProjetosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qU8cxNhEMFeIc146+2MPlHMkof+uvi8eSZMh0VBIuloFZXWAJCx2/c69Pa9ZB9gOPMBgiOtbF0a8kX3ae7vnow==", "projeto"=>{"nomeProjeto"=>"Fanfarra", "inicio"=>"2017", "termino"=>"2018", "resumo"=>"assadsdasdasdsdas"}, "commit"=>"Create Projeto"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Fanfarra"], ["inicio", 2017], ["termino", 2018], ["resumo", "assadsdasdasdsdas"], ["created_at", "2019-04-26 11:46:09.635026"], ["updated_at", "2019-04-26 11:46:09.635026"]]
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[35m (141.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+Redirected to http://localhost:3000/projetos/2
+Completed 302 Found in 149ms (ActiveRecord: 141.8ms)
+
+
+Started GET "/projetos/2" for ::1 at 2019-04-26 08:46:09 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 23ms (Views: 21.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 08:46:11 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 41ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 08:46:17 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 24.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/new" for ::1 at 2019-04-26 08:46:19 -0300
+Processing by AlunosController#new as HTML
+  Rendering alunos/new.html.erb within layouts/application
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  Rendered alunos/_form.html.erb (138.5ms)
+  Rendered alunos/new.html.erb within layouts/application (178.1ms)
+Completed 200 OK in 235ms (Views: 208.1ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/alunos" for ::1 at 2019-04-26 08:46:45 -0300
+Processing by AlunosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xw2oaYFA+gDADdV76wMyWyQ90RXSvmzA90LJbmFzFBG6CsL8pou3kIEtKAD6c5RvCzvrEq6WQDTzlN1zZrvF8A==", "aluno"=>{"idAluno"=>"001", "nome"=>"Alisson", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1"]}, "commit"=>"Create Aluno"}
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[36mAluno Create (0.5ms)[0m  [1m[32mINSERT INTO "alunos" ("idAluno", "nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["idAluno", "001"], ["nome", "Alisson"], ["categoria", "GRADUACAO"], ["curso", "Ciencia da Computacao"], ["created_at", "2019-04-26 11:46:45.944749"], ["updated_at", "2019-04-26 11:46:45.944749"]]
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[35m (170.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 181ms (ActiveRecord: 170.9ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 08:46:46 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.4ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.6ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 57ms (Views: 43.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 08:46:49 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 27ms (Views: 24.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 08:46:50 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 28ms (Views: 25.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 08:46:54 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 08:48:17 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (6.4ms)
+  Rendered alunos/edit.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 624ms (Views: 26.2ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/alunos/1" for ::1 at 2019-04-26 08:48:21 -0300
+Processing by AlunosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"V5wQVBcahRFOu1L18GNSsUsVsS9NTPmfkF2DDe1pp0GpyTK6S2T9u35g9bHLjr0gbxtyJHRpz5DRo9N5zwIdTw==", "aluno"=>{"idAluno"=>"001", "nome"=>"Alisson", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1"]}, "commit"=>"Update Aluno", "id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:55
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 08:48:21 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.1ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 08:48:37 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 29.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 08:51:05 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 08:51:08 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (7.7ms)
+  Rendered alunos/edit.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/alunos/1" for ::1 at 2019-04-26 08:51:12 -0300
+Processing by AlunosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YQdAtGyaN7HjzUPLA49k6LfKvs12eC9hdyEK3nmgKd6fUmJaMORPG9MW5I84Yot5k8R9xk9dGW4231qqW8uT0A==", "aluno"=>{"idAluno"=>"001", "nome"=>"Alisson", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1", "2"]}, "commit"=>"Update Aluno", "id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:55
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 6ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 08:51:12 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.4ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 35ms (Views: 31.8ms | ActiveRecord: 0.6ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (183.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (130.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idAluno" varchar, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (160.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (167.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (94.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (84.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (76.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (124.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-04-26 12:03:38.659799"], ["updated_at", "2019-04-26 12:03:38.659799"]]
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (72.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.gem/ruby/2.6.0/bin/rake:23
+Started GET "/projetos" for ::1 at 2019-04-26 09:04:20 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1554ms (Views: 1537.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/projetos/new" for ::1 at 2019-04-26 09:04:23 -0300
+Processing by ProjetosController#new as HTML
+  Rendering projetos/new.html.erb within layouts/application
+  Rendered projetos/_form.html.erb (6.6ms)
+  Rendered projetos/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 56ms (Views: 44.4ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/projetos" for ::1 at 2019-04-26 09:04:35 -0300
+Processing by ProjetosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gUr+B4x6wQIvQoKnUlQFyXlN8kMpg1kqiyohsV60HWstYJdDcBKHqGmM4TLwMNJTNqkzNGxmYXJ+KH26dUdAkg==", "projeto"=>{"nomeProjeto"=>"Aleluia", "inicio"=>"1997", "termino"=>"1998", "resumo"=>"dedewdwedwedw"}, "commit"=>"Create Projeto"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[36mProjeto Create (0.4ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Aleluia"], ["inicio", 1997], ["termino", 1998], ["resumo", "dedewdwedwedw"], ["created_at", "2019-04-26 12:04:35.659819"], ["updated_at", "2019-04-26 12:04:35.659819"]]
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[35m (136.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+Redirected to http://localhost:3000/projetos/1
+Completed 302 Found in 145ms (ActiveRecord: 137.0ms)
+
+
+Started GET "/projetos/1" for ::1 at 2019-04-26 09:04:35 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 35ms (Views: 31.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 09:04:38 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/projetos/new" for ::1 at 2019-04-26 09:04:40 -0300
+Processing by ProjetosController#new as HTML
+  Rendering projetos/new.html.erb within layouts/application
+  Rendered projetos/_form.html.erb (3.9ms)
+  Rendered projetos/new.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 65ms (Views: 63.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projetos" for ::1 at 2019-04-26 09:04:52 -0300
+Processing by ProjetosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZXkFLvC3BoLiJuGtHy5z/nGHCy0HxLpWIcmzoLLzFA/JU2xqDN9AKKTogji9SqRkPmPKWkIhgg7Uy++rmQBJ9g==", "projeto"=>{"nomeProjeto"=>"Tramontina", "inicio"=>"1222", "termino"=>"1223", "resumo"=>"dddqdqwdqwd"}, "commit"=>"Create Projeto"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Tramontina"], ["inicio", 1222], ["termino", 1223], ["resumo", "dddqdqwdqwd"], ["created_at", "2019-04-26 12:04:52.342002"], ["updated_at", "2019-04-26 12:04:52.342002"]]
+  ↳ app/controllers/projetos_controller.rb:30
+  [1m[35m (182.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/projetos_controller.rb:30
+Redirected to http://localhost:3000/projetos/2
+Completed 302 Found in 190ms (ActiveRecord: 183.2ms)
+
+
+Started GET "/projetos/2" for ::1 at 2019-04-26 09:04:52 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 30ms (Views: 28.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 09:04:54 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 09:04:59 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 38.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/alunos/new" for ::1 at 2019-04-26 09:05:00 -0300
+Processing by AlunosController#new as HTML
+  Rendering alunos/new.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  Rendered alunos/_form.html.erb (8.9ms)
+  Rendered alunos/new.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 46ms (Views: 34.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/alunos" for ::1 at 2019-04-26 09:05:23 -0300
+Processing by AlunosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Mk/um0bp4FPOY4ym8vnPACEk91o9WhXJ+Ntr1aWdADJPSIQOYSKtw49Dcd3jiWk0DiLNXUFyOT38DX/IolXR0w==", "aluno"=>{"idAluno"=>"001", "nome"=>"Jhonny", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1"]}, "commit"=>"Create Aluno"}
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[36mAluno Create (0.3ms)[0m  [1m[32mINSERT INTO "alunos" ("idAluno", "nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["idAluno", "001"], ["nome", "Jhonny"], ["categoria", "GRADUACAO"], ["curso", "Ciencia da Computacao"], ["created_at", "2019-04-26 12:05:23.382238"], ["updated_at", "2019-04-26 12:05:23.382238"]]
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[35m (337.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 345ms (ActiveRecord: 337.4ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:05:23 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 42ms (Views: 38.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 09:05:25 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 34ms (Views: 32.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:05:26 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 09:06:53 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (9.4ms)
+  Rendered alunos/edit.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/alunos/1" for ::1 at 2019-04-26 09:06:56 -0300
+Processing by AlunosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vo6PHcs8fkRdpYoq/tJoSKjT8bLbBZmF3C31Qxd3l1So263zl0IG7m1+LW7FP4fZjN0yueIgr4qd06U3NRwtWg==", "aluno"=>{"idAluno"=>"001", "nome"=>"Jhonny", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1", "2"]}, "commit"=>"Update Aluno", "id"=>"1"}
+  [1m[36mAluno Load (0.1ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:55
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 5ms (ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:06:56 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.1ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 35ms (Views: 33.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 09:07:13 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (7.4ms)
+  Rendered alunos/edit.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/alunos/1" for ::1 at 2019-04-26 09:07:17 -0300
+Processing by AlunosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6BKGHTM3+to241Eeau+vQ/9aR2sFLPqOUtKufHDihIAWR6Tzb0mCcAY49lpRAkDS21SEYDwJzIETLP4IUok+jg==", "aluno"=>{"idAluno"=>"001", "nome"=>"Jhonny", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1", "2"]}, "commit"=>"Update Aluno", "id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:55
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:07:17 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/bootsnap-1.4.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/bootsnap-1.4.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/bootsnap-1.4.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/bootsnap-1.4.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/bootsnap-1.4.3/lib/bootsnap/load_path_cache/core_ext/kernel_require.rb:22
+Started GET "/" for ::1 at 2019-04-26 09:19:04 -0300
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/lib/ruby/gems/2.6.0/gems/web-console-3.7.0/lib/web_console/middleware.rb:135
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/italo/.gem/ruby/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/italo/.gem/ruby/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 55ms (Views: 5.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/projetos" for ::1 at 2019-04-26 09:19:10 -0300
+Processing by ProjetosController#index as HTML
+  Rendering projetos/index.html.erb within layouts/application
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/projetos/index.html.erb:17
+  Rendered projetos/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 1567ms (Views: 1557.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projetos/1" for ::1 at 2019-04-26 09:19:16 -0300
+Processing by ProjetosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/projetos_controller.rb:67
+  Rendering projetos/show.html.erb within layouts/application
+  Rendered projetos/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 33.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos" for ::1 at 2019-04-26 09:19:22 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 72ms (Views: 65.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:19:27 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.4ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 55ms (Views: 36.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 09:19:31 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (12.9ms)
+  Rendered alunos/edit.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 48ms (Views: 44.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:19:35 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1/edit" for ::1 at 2019-04-26 09:19:37 -0300
+Processing by AlunosController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  Rendering alunos/edit.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  [1m[36mProjeto Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ? AND "projetos"."id" = ? LIMIT ?[0m  [["aluno_id", 1], ["id", 2], ["LIMIT", 1]]
+  ↳ app/views/alunos/_form.html.erb:40
+  Rendered alunos/_form.html.erb (9.8ms)
+  Rendered alunos/edit.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/alunos/1" for ::1 at 2019-04-26 09:19:40 -0300
+Processing by AlunosController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0/2FENNtPgkRQupx90rCyZN5c62bduHH8FwQqkloVbUtqKf+jxNGoyGZTTXMpy1Yt3ewpqJT18ixokDeawPvuw==", "aluno"=>{"idAluno"=>"001", "nome"=>"Jhonny", "categoria"=>"GRADUACAO", "curso"=>"Ciencia da Computacao", "projeto_ids"=>["1"]}, "commit"=>"Update Aluno", "id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:55
+Unpermitted parameter: :projeto_ids
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:58
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-04-26 09:19:40 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.1ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.1ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 36ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
