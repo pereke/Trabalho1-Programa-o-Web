@@ -10,7 +10,7 @@ O Presente projeto tem por objetivo a criação de um sistema WEB para um docent
 
 **Back-End**
 
-**Ruby on Rails**:Rails é uma estrutura de desenvolvimento de aplicativos da web escrita na linguagem de programação Ruby. Foi projetado para facilitar a programação de aplicativos da WEB, fazendo suposições sobre o que todo desenvolvedor precisa para começar. Permite que você escreva menos código enquanto realiza mais do que muitas outras linguagens e frameworks. Desenvolvedores experientes do Rails também relatam que isso torna o desenvolvimento de aplicativos da Web mais divertido. fonte: <https://guides.rubyonrails.org/getting_started.html>.
+**Ruby on Rails**:Rails é uma estrutura de desenvolvimento de aplicativos da web escrita na linguagem de programação Ruby. Foi projetado para facilitar a programação de aplicativos da WEB, fazendo suposições sobre o que todo desenvolvedor precisa para começar. Permite que você escreva menos código enquanto realiza mais do que muitas outras linguagens e frameworks. Desenvolvedores experientes do Rails também relatam que isso torna o desenvolvimento de aplicativos da Web mais divertido. fonte: <https://guides.rubyonrails.org/getting_started.html>. O grupo decidiu pela linguagem e pelo Framework pois, além de um conhecimento novo a ser adquirido, o Ruby on Rails é um framework que facilita a criação dos modelos e persistência dos dados.
 
 ##  Política de uso do git
 
