@@ -20,5 +20,11 @@
   <%= @aluno.curso %>
 </p>
 
+<% @projetos.each do |projeto| %>
+  <div>
+  <%= projeto.nomeProjeto %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_aluno_path(@aluno) %> |
 <%= link_to 'Back', alunos_path %>

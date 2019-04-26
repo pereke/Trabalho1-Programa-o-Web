@@ -34,4 +34,11 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+
+  <% @projetos.each do |projeto| %>
+    <div>
+    <%= check_box_tag "aluno[projeto_ids][]", projeto.id, aluno.projetos.include?(projeto) %>
+    <%= projeto.nomeProjeto %>
+    </div>
+  <% end %>
 <% end %>

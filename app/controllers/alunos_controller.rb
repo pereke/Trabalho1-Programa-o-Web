@@ -5,20 +5,31 @@ class AlunosController < ApplicationController
   # GET /alunos.json
   def index
     @alunos = Aluno.all
+    @projetos = Projeto.all
   end
 
   # GET /alunos/1
   # GET /alunos/1.json
   def show
+    @aluno = Aluno.find(params[:id])
+    @projetos = @aluno.projetos
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @aluno }
+    end
   end
 
   # GET /alunos/new
   def new
     @aluno = Aluno.new
+    @projetos = Projeto.all
   end
 
   # GET /alunos/1/edit
   def edit
+    @alunos = Aluno.all
+    @projetos = Projeto.all
   end
 
   # POST /alunos
@@ -40,6 +51,9 @@ class AlunosController < ApplicationController
   # PATCH/PUT /alunos/1
   # PATCH/PUT /alunos/1.json
   def update
+    params[:aluno][:projeto_ids] ||= []
+    @aluno = Aluno.find(params[:id])
+
     respond_to do |format|
       if @aluno.update(aluno_params)
         format.html { redirect_to @aluno, notice: 'Aluno was successfully updated.' }
