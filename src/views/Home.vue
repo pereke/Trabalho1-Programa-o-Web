@@ -2,52 +2,55 @@
     <v-layout style="height: 100%;" row wrap class="imgFundo">
       <v-flex hidden-xs-only sm6 lg9> 
         <v-container>
+          <v-icon style="font-size: 100px;" color="white">school</v-icon>
+          <span class="display-1 white--text">SYSTEM NAME</span>
         </v-container>
       </v-flex>
-      <v-flex sm6 lg3 class="white">
-        <v-container class="px-5 mt-9" >
-            <h1 class="headline mb-2 grey--text text--darken-3 font-weight-regular">Login</h1>
-            <p class="mb-5 body-2 grey--text text--darken-1 font-weight-regular" >Entre com seu login e senha cadastrado</p>
-            <v-text-field
-              label="E-mail"
-              outline
-              v-model="email"
-              :rules="[rules.required, rules.email]">
-            </v-text-field>
-            <v-text-field 
-              label="Senha"
-              outline
-              v-model="password"
-              :append-icon="showPassword ? 'visibility' : 'visibility_off'"
-              :type="showPassword ? 'text' : 'password'"
-              :rules="[rules.required]"
-              @click:append="showPassword = !showPassword">
-            </v-text-field>
-            
-            <v-btn
-            class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3>
-            Login
-            </v-btn>
-            <v-btn class="text-capitalize font-weight-regular" color="orange lighten-1" block  dark>Contato</v-btn>
+      <v-flex sm6 lg3>
+        <v-layout column wrap class="white" style="height:100%;">
+          <v-flex xs2></v-flex> <!-- opção utilizada em detrimento que offset não funciona quando o layout está definido como column-->
+          <v-flex xs6>
+            <v-container class="px-5">
+                <h1 class="headline mb-2 grey--text text--darken-3 font-weight-regular">Login</h1>
+                <p class="mb-5 body-2 grey--text text--darken-1 font-weight-regular" >Entre com seu login e senha cadastrado</p>
+                
+                <v-text-field
+                  label="E-mail"
+                  solo
+                  v-model="email"
+                  :rules="[rules.required, rules.email]">
+                </v-text-field>
+                <v-text-field 
+                  label="Senha"
+                  solo
+                  v-model="password"
+                  :append-icon="showPassword ? 'visibility' : 'visibility_off'"
+                  :type="showPassword ? 'text' : 'password'"
+                  :rules="[rules.required]"
+                  @click:append="showPassword = !showPassword">
+                </v-text-field>
+                
+                <v-btn
+                class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3>
+                Login
+                </v-btn>
+                <v-btn class="text-capitalize font-weight-regular" color="#3b5998" block  dark>Contato</v-btn>
 
-        </v-container>
+            </v-container>
+          </v-flex>
+        </v-layout>
       </v-flex>
     </v-layout>
 
 </template>
 
 <style>
-  .mt-9{
-    margin-top: 144px !important;
-  }
-
-  .v-input__slot {
-    border:1px solid #E0E0E0 !important;
-  }
 
   .imgFundo {
-    /*background-image: url("../assets/imagem_home.jpg");*/
-    background-color:blueviolet;
+    background-image: url("../assets/eyeglasses-1245879_1920.jpg");
+    background-repeat: repeat;
+    
+    /*background-color:blueviolet;*/
   }
 
 </style>
