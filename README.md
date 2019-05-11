@@ -25,22 +25,34 @@ O Presente projeto tem por objetivo a criação de um sistema WEB para um docent
 
 ## Instalação
 
-1. Instale o yarn na sua máquina:
+1. Instale o ruby 2.6.2 na sua máquina. Utilizando o rbenv, o comando é:
 
-<https://yarnpkg.com>
+`$ rbenv install 2.6.2`
+`$ rbenv global 2.6.2`
 
-2. Adicione o bundler utilizando o gem:
+2. Baixe e instale o yarn:
 
-` gem install bundler`
+<https://yarnpkg.com/en/>
 
-3. Crie e migre os bancos de dados utilizando o rails
+3. Adicione o bundler utilizando o gem:
 
-`rails db:create db:migrate`
+`$ gem install bundler`
 
-4. Rode o bundle
+4. Faça o download do projeto e entre em seu diretório:
 
-`bundle install`
+`$ git clone https://github.com/pereke/Trabalho1-Programacao-Web` 
+`$ cd Trabalho1-Programacao-Web`
 
-5. Rode o yarn:
+5. Faça o download dos pacotes necessários utlizando o yarn:
+`$ yarn install`
 
-`bin/yarn install`
+6. Faça o download das gems utilizando o bundler:
+`$ bundle install`
+
+7. Crie e migre o banco de dados:
+`$ bin/rails db:create db:migrate`
+
+## Execução
+
+Para executar, entre no diretório do projeto e execute:
+`$ bin/rails server`
