@@ -1,11 +1,11 @@
 <template>
     <v-layout style="height: 100%;" row wrap class="backgroundImage">
-      <v-flex hidden-xs-only sm6 md8 lg9> 
-        <v-container>
-          <v-icon style="font-size: 100px;" color="white">school</v-icon>
-          <span class="display-1 white--text">SYSTEMNAME</span>
-        </v-container>
-      </v-flex>
+        <v-flex hidden-xs-only sm6 md8 lg9> 
+          <v-container>
+            <v-icon style="font-size: 100px;" color="white">school</v-icon>
+            <span class="display-1 white--text">SYSTEMNAME</span>
+          </v-container>
+        </v-flex>
       <v-flex sm6 md4 lg3>
         <v-layout column wrap class="white" style="height:100%;">
           <v-flex xs2></v-flex> <!-- opção utilizada em detrimento que offset não funciona quando o layout está definido como column-->
@@ -36,7 +36,9 @@
                   Login
                   </v-btn>
                   </v-form>
-                <v-btn class="text-capitalize font-weight-regular" color="#3b5998" block  dark>Contato</v-btn>
+                <router-link to="/contato">
+                  <v-btn class="text-capitalize font-weight-regular" color="#3b5998" block  dark>Contato</v-btn>
+                </router-link>
             </v-container>
           </v-flex>
         </v-layout>
