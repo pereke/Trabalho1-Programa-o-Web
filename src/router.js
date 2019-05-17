@@ -1,11 +1,27 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
-import Contato from './views/Contato.vue'
-import Menu from './views/Menu.vue'
-import Perfil from './views/Perfil.vue'
-import EditarInformacoes from './views/EditarInformacoes.vue'
-import Alunos from './views/Alunos.vue'
+
+// Componentes de página
+import Home from './components/Home.vue'
+import Contato from './components/Contato.vue'
+
+import Menu from './components/Menu.vue'
+import PaginaNavegacao from './components/PaginaNavegacao.vue'
+
+// Componentes navegáveis na página de navegação
+import Perfil from './components/Perfil.vue'
+import Aulas from './components/Aulas.vue'
+import Alunos from './components/Alunos.vue'
+import Publicacoes from './components/Publicacoes.vue'
+import ProjetosPesquisa from './components/ProjetosPesquisa.vue'
+
+// Componentes de edição alcançáveis a partir de seu respectivo componente
+import EditarPerfil from './components/EditarPerfil.vue'
+import EditarAulas from './components/EditarAulas.vue'
+import EditarAlunos from './components/EditarAlunos.vue'
+import EditarPublicacoes from './components/EditarPublicacoes.vue'
+import EditarProjetosPesquisa from './components/EditarProjetosPesquisa.vue'
+
 
 Vue.use(Router)
 
@@ -24,9 +40,34 @@ export default new Router({
       component: Contato
     },
     {
-      path:'/editar',
-      name: 'editar',
-      component: EditarInformacoes
+      path:'/paginanavegacao',
+      name: 'paginanavegacao',
+      component: PaginaNavegacao
+    },
+    {
+      path:'/editaralunos',
+      name: 'editaralunos',
+      component: EditarAlunos
+    },
+    {
+      path:'/editarperfil',
+      name: 'editarperfil',
+      component: EditarPerfil
+    },
+    {
+      path:'/editarpublicacoes',
+      name: 'editarpublicacoes',
+      component: EditarPublicacoes
+    },
+    {
+      path:'/editaraulas',
+      name: 'editaraulas',
+      component: EditarAulas
+    },
+    {
+      path:'/editarprojetospesquisa',
+      name: 'editarprojetospesquisa',
+      component: EditarProjetosPesquisa
     },
     {
       path:'/alunos',
@@ -34,9 +75,19 @@ export default new Router({
       component: Alunos
     },
     {
-      path:'/contato',
-      name: 'contato',
-      component: Contato
+      path:'/aulas',
+      name: 'aulas',
+      component: Aulas
+    },
+    {
+      path:'/publicacoes',
+      name: 'publicacoes',
+      component: Publicacoes
+    },
+    {
+      path:'/projetospesquisa',
+      name: 'projetospesquisa',
+      component: ProjetosPesquisa
     },
     {
       path:'/perfil',

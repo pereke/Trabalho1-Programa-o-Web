@@ -30,11 +30,12 @@
                     :rules="[rules.required]"
                     @click:append="showPassword = !showPassword">
                   </v-text-field>
-                  
-                  <v-btn
-                  class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3 @click="submit()">
-                  Login
-                  </v-btn>
+                  <router-link to="/paginanavegacao">
+                    <v-btn
+                    class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3 @click="submit()">
+                    Login
+                    </v-btn>
+                  </router-link>
                   </v-form>
                 <router-link to="/contato">
                   <v-btn class="text-capitalize font-weight-regular" color="#3b5998" block  dark>Contato</v-btn>
