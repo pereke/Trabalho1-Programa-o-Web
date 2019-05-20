@@ -1,58 +1,33 @@
 <template>
-    <v-container>
-        <form
-        action="/something"
-        method="post">
-
-        <p>
-            <label>Nome</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-         <p>
-            <label>Email</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <label>Formação</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <label>Sala </label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <label>Telefone</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <v-btn>
-                <input
-                type="submit"
-                value="Enviar">
-            </v-btn>
-        </p>
-        </form>
-    </v-container>
+    <v-form v-model="valid">
+        <v-text-field
+            v-model="nome"
+            :rules="nomeRules"
+            label="Nome"
+            required
+        ></v-text-field>
+        <v-text-field
+            v-model="anoInicio"
+            :rules="anoInicioRules"
+            label="Ano de Início"
+            required
+        ></v-text-field>
+        <v-text-field
+            v-model="anoTermino"
+            :rules="anoTerminoRules"
+            label="Ano de Término"
+            required
+        ></v-text-field>
+        <v-text-field
+            v-model="resumo"
+            :rules="resumoRules"
+            label="Resumo"
+            required
+        ></v-text-field>
+        <!-- TODO inserir tabela com alunos -->
+        <v-btn color="success">Salvar </v-btn>
+        <v-btn color="error"  >Voltar </v-btn>
+    </v-form>
 </template>
 
 
@@ -63,5 +38,25 @@
 </style>
 
 <script>
-
+export default {
+    data: () => ({
+        valid: false,
+        nome: '',
+        anoInicio: '',
+        anoTermino: '',
+        resumo: '',
+        nomeRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        anoInicioRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        anoTerminoRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        resumoRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+    })
+}
 </script>

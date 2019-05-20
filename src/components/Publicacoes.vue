@@ -14,9 +14,27 @@
             <td class="text-xs-left">{{ props.item.excluir }}</td>
             </template>
         </v-data-table>
-        <v-container>
-            <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark> Adicionar Publicação </v-btn>
+        <v-flex xs12>
+        <v-container px-5>
+            <v-dialog v-model="dialog">
+            
+            <template v-slot:activator="{ on }">
+                <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Publicação</v-btn>
+            </template>
+
+            <v-card>
+                <v-card-title
+                    class="headline grey lighten-2"
+                    primary-title
+                > Adicionar Publicação
+                </v-card-title>
+                <v-card-text>
+                    <EditarPublicacoes />
+                </v-card-text>
+            </v-card>
+            </v-dialog>
         </v-container>
+        </v-flex>
     </v-layout>
     
 </template>
@@ -26,8 +44,11 @@
 </style>
 
 <script>
-
+    import EditarPublicacoes from './EditarPublicacoes.vue'
     export default {
+        components: {
+            EditarPublicacoes
+        },
         data () {
         return {
             headers: [

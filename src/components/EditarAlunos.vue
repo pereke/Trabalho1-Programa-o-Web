@@ -1,58 +1,30 @@
 <template>
-    <v-container>
-        <v-form
-        action="/something"
-        method="post">
-
-        <p>
-            <label>Nome</label>
-            <v-text-field 
-            solo
-            v-model="text"
-            label="name"></v-text-field>
-        </p>
-
-         <p>
-            <label>Email</label>
-            <v-text-field
-            id="email"
-            type="text"
-            name="name"></v-text-field>
-        </p>
-
-        <p>
-            <label>Formação</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <label>Sala </label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <label>Telefone</label>
-            <input style="border: 1px solid black;"
-            id="name"
-            type="text"
-            name="name">
-        </p>
-
-        <p>
-            <v-btn>
-                <input
-                type="submit"
-                value="Enviar">
-            </v-btn>
-        </p>
-        </v-form>
-    </v-container>
+    <v-form v-model="valid">
+        <v-text-field
+            v-model="nomeCompleto"
+            :rules="nomeCompletoRules"
+            label="Nome Completo"
+            required
+        ></v-text-field>
+        <v-text-field
+            v-model="matricula"
+            :rules="matriculaRules"
+            label="Num de Matrícula"
+            required
+        ></v-text-field>
+        <v-text-field
+            v-model="curso"
+            :rules="cursoRules"
+            label="Curso do Aluno"
+            required
+        ></v-text-field>
+        <v-select
+            :items="categorias"
+            label="Categoria"
+        ></v-select>
+        <v-btn color="success">Salvar </v-btn>
+        <v-btn color="error"  >Voltar </v-btn>
+    </v-form>
 </template>
 
 
@@ -63,5 +35,21 @@
 </style>
 
 <script>
-
+export default {
+    data: () => ({
+        valid: false,
+        nomeCompleto: '',
+        matricula: '',
+        nomeCompletoRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        matriculaRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        cursoRules: [
+            v => !!v || 'Preenchimento necessário'
+        ],
+        categorias: ['Graduação', 'Pós-graduação'] 
+    })
+}
 </script>

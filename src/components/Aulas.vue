@@ -12,9 +12,27 @@
             <td class="text-xs-left">{{ props.item.excluir }}</td>
             </template>
         </v-data-table>
-        <v-container>
-            <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark> Adicionar Aula </v-btn>
+        <v-flex xs12>
+        <v-container px-5>
+            <v-dialog v-model="dialog">
+            
+            <template v-slot:activator="{ on }">
+                <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Aula</v-btn>
+            </template>
+
+            <v-card>
+                <v-card-title
+                    class="headline grey lighten-2"
+                    primary-title
+                > Adicionar Aula
+                </v-card-title>
+                <v-card-text>
+                    <EditarAulas />
+                </v-card-text>
+            </v-card>
+            </v-dialog>
         </v-container>
+        </v-flex>
     </v-layout>
     
 </template>
@@ -24,8 +42,11 @@
 </style>
 
 <script>
-
+    import EditarAulas from './EditarAulas.vue'
     export default {
+        components: {
+            EditarAulas
+        },
         data () {
         return {
             headers: [

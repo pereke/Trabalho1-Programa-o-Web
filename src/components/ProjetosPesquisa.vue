@@ -14,9 +14,27 @@
             <td class="text-xs-left">{{ props.item.excluir }}</td>
             </template>
         </v-data-table>
-        <v-container>
-            <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark> Adicionar Projeto de Pesquisa </v-btn>
+        <v-flex xs12>
+        <v-container px-5>
+            <v-dialog v-model="dialog">
+            
+            <template v-slot:activator="{ on }">
+                <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Projeto de Pesquisa</v-btn>
+            </template>
+
+            <v-card>
+                <v-card-title
+                    class="headline grey lighten-2"
+                    primary-title
+                > Adicionar Projeto de Pesquisa
+                </v-card-title>
+                <v-card-text>
+                    <EditarProjetosPesquisa />
+                </v-card-text>
+            </v-card>
+            </v-dialog>
         </v-container>
+    </v-flex>
     </v-layout>
     
 </template>
@@ -26,8 +44,12 @@
 </style>
 
 <script>
-
+    import EditarProjetosPesquisa from './EditarProjetosPesquisa.vue'
     export default {
+        dialog: false,
+        components: {
+            EditarProjetosPesquisa
+        },
         data () {
         return {
             headers: [
