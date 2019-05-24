@@ -22,8 +22,8 @@
             :items="categorias"
             label="Categoria"
         ></v-select>
-        <v-btn color="success">Salvar </v-btn>
-        <v-btn color="error"  >Voltar </v-btn>
+        <v-btn color="success" @click="salvarAluno">Salvar </v-btn>
+        <v-btn color="error"  @click="fechaDialogo">Voltar </v-btn>
     </v-form>
 </template>
 
@@ -50,6 +50,14 @@ export default {
             v => !!v || 'Preenchimento necessário'
         ],
         categorias: ['Graduação', 'Pós-graduação'] 
-    })
+    }),
+    methods: {
+        fechaDialogo() {
+            this.$emit('fechar')
+        },
+        salvarAluno() {
+            this.$emit('salvar')
+        }
+    }
 }
 </script>

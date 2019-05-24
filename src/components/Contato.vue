@@ -1,41 +1,43 @@
 <template>
-    <v-layout row wrap justify-center style="height: 70%;">
-        <v-flex xs12 > 
-            <v-container >
-                <v-icon style="font-size: 100px;" color="black">email</v-icon>
-                <span class="display-2 black--text">Contato</span>
+    <v-container>
+        <v-toolbar dark color="#3b5998">
+            <v-toolbar-title class="white--text">Contato</v-toolbar-title>
+        </v-toolbar>
+        <div class="item elevation-5">
+            <v-container>
+                <v-layout>
+                    <v-flex xs4>
+                        <v-container px-5>
+                            <v-card>
+                            <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Professor:  Rafael Durelli</label><br>
+                            <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">E-mail: durelli@ufla.br</label><br>
+                            <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Telefone: (35) 9 9943-5476</label>  
+                            </v-card>
+                        </v-container>
+                    </v-flex>
+                    <v-flex xs8>
+                        <v-container px-5>
+                            <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Formação: </label>
+                                <v-card>
+                                    <v-card-title primary-title>
+                                    <div>
+                                    Lorem ipsum sagittis ullamcorper iaculis viverra magna nam hac ipsum, fermentum lacus fermentum proin erat convallis class ut, bibendum rhoncus donec nulla class aliquam vitae lorem. placerat magna varius mauris faucibus sem sodales aliquet porttitor aptent eros hendrerit eu erat donec, odio dictumst aenean luctus litora condimentum pretium rhoncus aptent accumsan donec litora praesent. volutpat porttitor netus ad feugiat porta tortor a, aenean platea imperdiet amet rhoncus nullam cubilia, at quam praesent eros vulputate proin. aptent neque eget porttitor faucibus feugiat a sagittis elit bibendum, tincidunt ultrices ad ipsum congue dolor per placerat pharetra, ad posuere lacus fringilla dolor rutrum cursus nunc. 
+                                    </div>
+                                    </v-card-title>
+                                </v-card>
+                        </v-container>
+                    </v-flex>
+                </v-layout>
+                <v-layout>
+                    <v-flex xs12>    
+                        <router-link to="/">
+                        <v-btn  block class="text-capitalize font-weight-regular" color="#3b5998"  dark>Voltar</v-btn>
+                        </router-link>
+                    </v-flex>
+                </v-layout>
             </v-container>
-        </v-flex>
-        <v-flex xs4>
-            <v-container >
-                <span class="display-1 black--text">Rafael Durelli</span>
-                <br>
-                <span class="display-1 black--text">Durelli@ufla.br</span>
-                <br>
-                <span class="display-1 black--text">35 999435476</span>
-            </v-container>
-        </v-flex>
-        <v-flex sm12 md4 lg6 xs8>
-            <v-container px-5>
-                <label style="font-size:30px;">Formação: </label>
-                <span style="white-space:pre-wrap; font-size:20px;">
-                    * Professor de WEB
-                    * Professor de Compliadores
-                    * Canelada Master
-                </span>
-            </v-container>
-        </v-flex>
-        <v-flex xs12>
-            <v-container px-5>
-                
-                <router-link to="/">
-                
-                <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark>Voltar</v-btn>
-
-                </router-link>
-            </v-container>
-        </v-flex>
-    </v-layout>
+            </div>
+    </v-container>
 </template>
 
 <style>

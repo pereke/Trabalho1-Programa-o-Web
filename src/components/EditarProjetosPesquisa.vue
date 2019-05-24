@@ -25,8 +25,8 @@
             required
         ></v-text-field>
         <!-- TODO inserir tabela com alunos -->
-        <v-btn color="success">Salvar </v-btn>
-        <v-btn color="error"  >Voltar </v-btn>
+        <v-btn color="success" @click="salvar()">Salvar </v-btn>
+        <v-btn color="error"  @click="fecharDialogo()">Voltar </v-btn>
     </v-form>
 </template>
 
@@ -57,6 +57,14 @@ export default {
         resumoRules: [
             v => !!v || 'Preenchimento necessário'
         ],
-    })
+    }),
+    methods: {
+        salvar() {
+            this.$emit('salvar')
+        },
+        fecharDialogo() {
+            this.$emit('fechar')
+        }
+    }
 }
 </script>

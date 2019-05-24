@@ -3,7 +3,7 @@
         <v-flex hidden-xs-only sm6 md8 lg9> 
           <v-container>
             <v-icon style="font-size: 100px;" color="white">school</v-icon>
-            <span class="display-1 white--text">SYSTEMNAME</span>
+            <span class="display-1 white--text">SISTEMA DE GERENCIAMENTO PARA PROFESSOR</span>
           </v-container>
         </v-flex>
       <v-flex sm6 md4 lg3>

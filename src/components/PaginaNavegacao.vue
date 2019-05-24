@@ -1,9 +1,13 @@
 <template>
     <v-flex>
         <div class="text-xs-center">
-            <v-container>
+            <v-container px10>
+            <v-card>
                 <Menu @mudarPagina="atualizarPagina"/><br/>
-                <component v-bind:is="paginaAtual"></component> 
+                <v-container px5>
+                    <component v-bind:is="paginaAtual"></component>
+                </v-container> 
+            </v-card>
             </v-container>
         </div>
     </v-flex>
