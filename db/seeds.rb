@@ -1,7 +1,92 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+
+Professor.create({
+    nomeProfessor: 'Rafael Durelli',
+    sala: '22B',
+    email: 'rafa.durelli@email.com',
+    telefone: '(25)5555-6666'
+})
+
+Aluno.create({
+    nome: "Ítalo Silva",
+    categoria: "Graduação",
+    curso: "Ciência da Computação"
+})
+
+Aluno.create({
+    nome: "Pedro Henrique",
+    categoria: "Pós-graduação",
+    curso: "Ciência da Computação"
+})
+
+Aluno.create({
+    nome: "Jonas Brother",
+    categoria: "Graduação",
+    curso: "Sistemas de Informação"
+})
+
+Projeto.create({
+    nomeProjeto: "Projeto 1",
+    inicio: 2018,
+    termino: 2019,
+    resumo: "lorem"
+})
+
+Projeto.create({
+    nomeProjeto: "Projeto 2",
+    inicio: 2018,
+    termino: 2019,
+    resumo: "lorem"
+})
+
+Projeto.create({
+    nomeProjeto: "Projeto 3",
+    inicio: 2018,
+    termino: 2019,
+    resumo: "lorem"
+})
+
+Projeto.create({
+    nomeProjeto: "Projeto 4",
+    inicio: 2018,
+    termino: 2019,
+    resumo: "lorem"
+})
+
+Aula.create({
+    nomeAula: "Aula 1",
+    categoria: "Graduação",
+    quantidade: 3
+})
+
+Aula.create({
+    nomeAula: "Aula 2",
+    categoria: "Pós-graduação",
+    quantidade: 2
+})
+
+Aula.create({
+    nomeAula: "Aula 3",
+    categoria: "Graduação",
+    quantidade: 1
+})
+
+Publicacao.create({
+    nomePublicacao: "Publicação 1",
+    categoria: "Artigo",
+    arquivoBib: "path/para/publicacao1.bib"
+})
+
+Publicacao.create({
+    nomePublicacao: "Publicação 2",
+    categoria: "Artigo",
+    arquivoBib: "path/para/publicacao2.bib"
+})
+
+Publicacao.create({
+    nomePublicacao: "Publicação 3",
+    categoria: "Artigo",
+    arquivoBib: "path/para/publicacao3.bib"
+})
+
+# TODO AlunosProjetos
+# TODO Testar aula Publicacoes

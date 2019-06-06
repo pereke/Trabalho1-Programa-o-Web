@@ -2322,3 +2322,1593 @@ Processing by AlunosController#index as HTML
 Completed 200 OK in 2074ms (Views: 2018.6ms | ActiveRecord: 0.5ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+Started GET "/alunos" for ::1 at 2019-06-04 10:25:40 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 2031ms (Views: 1976.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/alunos/new" for ::1 at 2019-06-04 10:25:47 -0300
+Processing by AlunosController#new as HTML
+  Rendering alunos/new.html.erb within layouts/application
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos"[0m
+  ↳ app/views/alunos/_form.html.erb:38
+  Rendered alunos/_form.html.erb (30.6ms)
+  Rendered alunos/new.html.erb within layouts/application (32.4ms)
+Completed 200 OK in 123ms (Views: 81.2ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/alunos" for ::1 at 2019-06-04 10:26:14 -0300
+Processing by AlunosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tGk/PIxPfu5bUkTr1uq81CLe2wE/bpirS+3FJJembb0vZe7bDPZCodqkEuXUCM372B6ALeqrqfTy6w8Z0Wr31g==", "aluno"=>{"idAluno"=>"1", "nome"=>"alfred", "categoria"=>"GRADUACAO", "curso"=>"CIENCIA_DA_COMP"}, "commit"=>"Create Aluno"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[36mAluno Create (0.5ms)[0m  [1m[32mINSERT INTO "alunos" ("idAluno", "nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["idAluno", "1"], ["nome", "alfred"], ["categoria", "GRADUACAO"], ["curso", "CIENCIA_DA_COMP"], ["created_at", "2019-06-04 13:26:14.147206"], ["updated_at", "2019-06-04 13:26:14.147206"]]
+  ↳ app/controllers/alunos_controller.rb:41
+  [1m[35m (132.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/alunos_controller.rb:41
+Redirected to http://localhost:3000/alunos/1
+Completed 302 Found in 143ms (ActiveRecord: 133.0ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-06-04 10:26:14 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.4ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 100ms (Views: 66.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/alunos" for ::1 at 2019-06-04 10:26:16 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 52ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/alunos/1" for ::1 at 2019-06-04 10:26:19 -0300
+Processing by AlunosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+  Rendering alunos/show.html.erb within layouts/application
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" INNER JOIN "alunos_projetos" ON "projetos"."id" = "alunos_projetos"."projeto_id" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 1]]
+  ↳ app/views/alunos/show.html.erb:23
+  Rendered alunos/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 47.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/alunos/1.son" for ::1 at 2019-06-04 10:26:23 -0300
+Processing by AlunosController#show as 
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+Completed 406 Not Acceptable in 4ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/alunos_controller.rb:17:in `show'
+Started GET "/alunos/1.json" for ::1 at 2019-06-04 10:26:27 -0300
+Processing by AlunosController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:81
+  [1m[36mCACHE Aluno Load (0.0ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/alunos_controller.rb:14
+Completed 406 Not Acceptable in 3ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionController::UnknownFormat (ActionController::UnknownFormat):
+  
+app/controllers/alunos_controller.rb:17:in `show'
+Started GET "/alunos" for ::1 at 2019-06-04 10:39:36 -0300
+Processing by AlunosController#index as HTML
+  Rendering alunos/index.html.erb within layouts/application
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos"[0m
+  ↳ app/views/alunos/index.html.erb:17
+  Rendered alunos/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 47ms (Views: 45.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /home/italo/.rbenv/versions/2.6.2/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (134.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (77.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "idAluno" varchar, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ bin/rails:9
+  [1m[35m (76.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ bin/rails:9
+  [1m[35m (85.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ bin/rails:9
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ bin/rails:9
+  [1m[35m (73.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ bin/rails:9
+  [1m[35m (70.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ bin/rails:9
+  [1m[35m (111.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-05 10:52:46.753917"], ["updated_at", "2019-06-05 10:52:46.753917"]]
+  ↳ bin/rails:9
+  [1m[35m (54.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Started GET "/" for ::1 at 2019-06-05 09:59:25 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/railties-5.2.3/lib/rails/templates/rails/welcome/index.html.erb (18.5ms)
+Completed 200 OK in 67ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api" for ::1 at 2019-06-05 10:00:54 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:01:09 -0300
+  
+LoadError (Unable to autoload constant Api::V1::ApplicationController, expected /home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/application_controller.rb to define it):
+  
+app/controllers/api/v1/professors_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/professors_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/professors_controller.rb:1:in `<main>'
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:02:26 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant Api::V1::ProfessorsController::Professors):
+  
+app/controllers/api/v1/professors_controller.rb:6:in `index'
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:03:21 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+Completed 500 Internal Server Error in 269ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ok' for #<Api::V1::ProfessorsController:0x000055cca0b42b58>):
+  
+app/controllers/api/v1/professors_controller.rb:7:in `index'
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:03:44 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ok' for #<Api::V1::ProfessorsController:0x00007fd4f47f1680>):
+  
+app/controllers/api/v1/professors_controller.rb:7:in `index'
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:05:30 -0300
+Processing by Api::V1::ProfessorsController#index as */*
+Completed 500 Internal Server Error in 177ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ok' for #<Api::V1::ProfessorsController:0x000055cc9f3baa58>):
+  
+app/controllers/api/v1/professors_controller.rb:7:in `index'
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:05:45 -0300
+Processing by Api::V1::ProfessorsController#index as */*
+Completed 500 Internal Server Error in 197ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ok' for #<Api::V1::ProfessorsController:0x000055cc9fcf19c8>):
+  
+app/controllers/api/v1/professors_controller.rb:7:in `index'
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:07:19 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+Completed 500 Internal Server Error in 173ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `ok' for #<Api::V1::ProfessorsController:0x000055cca0a2fb08>):
+  
+app/controllers/api/v1/professors_controller.rb:7:in `index'
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:07:43 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:7
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:07:57 -0300
+Processing by Api::V1::ProfessorsController#index as */*
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Rafael Durelli"], ["sala", "22B"], ["email", "rafa.durelli@email.com"], ["telefone", "(25)5555-6666"], ["created_at", "2019-06-05 13:09:58.038614"], ["updated_at", "2019-06-05 13:09:58.038614"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (91.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:10:14 -0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+LoadError (Unable to autoload constant Api::V1::ApplicationController, expected /home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/application_controller.rb to define it):
+  
+app/controllers/api/v1/professors_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/professors_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/professors_controller.rb:1:in `<main>'
+Started GET "/api/v1/professors" for ::1 at 2019-06-05 10:10:22 -0300
+Processing by Api::V1::ProfessorsController#index as */*
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:7
+Completed 200 OK in 30ms (Views: 24.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/v1/professors.json" for ::1 at 2019-06-05 10:16:04 -0300
+Processing by Api::V1::ProfessorsController#index as JSON
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT "professors".* FROM "professors" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:7
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/api/v1/professors/1" for ::1 at 2019-06-05 10:17:23 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::ProfessorsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/professors/1" for ::1 at 2019-06-05 10:17:29 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::ProfessorsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/professors/1.json" for ::1 at 2019-06-05 10:17:55 -0300
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for Api::V1::ProfessorsController):
+  
+actionpack (5.2.3) lib/abstract_controller/base.rb:129:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/professors/1.json" for ::1 at 2019-06-05 10:18:04 -0300
+Processing by Api::V1::ProfessorsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/professors_controller.rb:11
+Completed 200 OK in 30ms (Views: 0.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/professors/1" for ::1 at 2019-06-05 10:18:14 -0300
+Processing by Api::V1::ProfessorsController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/professors_controller.rb:11
+Completed 200 OK in 3ms (Views: 0.8ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/professors" for ::1 at 2019-06-05 10:32:18 -0300
+Processing by Api::V1::ProfessorsController#create as */*
+  Parameters: {"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455", "professor"=>{"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455"}}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:211:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:243:in `handle_unverified_request'
+actionpack (5.2.3) lib/action_controller/metal/request_forgery_protection.rb:238:in `verify_authenticity_token'
+activesupport (5.2.3) lib/active_support/callbacks.rb:426:in `block in make_lambda'
+activesupport (5.2.3) lib/active_support/callbacks.rb:198:in `block (2 levels) in halting'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:34:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.2.3) lib/active_support/callbacks.rb:199:in `block in halting'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `block in invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `each'
+activesupport (5.2.3) lib/active_support/callbacks.rb:513:in `invoke_before'
+activesupport (5.2.3) lib/active_support/callbacks.rb:131:in `run_callbacks'
+actionpack (5.2.3) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:34:in `block in process_action'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `block in instrument'
+activesupport (5.2.3) lib/active_support/notifications/instrumenter.rb:23:in `instrument'
+activesupport (5.2.3) lib/active_support/notifications.rb:168:in `instrument'
+actionpack (5.2.3) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (5.2.3) lib/action_controller/metal/params_wrapper.rb:256:in `process_action'
+activerecord (5.2.3) lib/active_record/railties/controller_runtime.rb:24:in `process_action'
+actionpack (5.2.3) lib/abstract_controller/base.rb:134:in `process'
+actionview (5.2.3) lib/action_view/rendering.rb:32:in `process'
+actionpack (5.2.3) lib/action_controller/metal.rb:191:in `dispatch'
+actionpack (5.2.3) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:52:in `dispatch'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:34:in `serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:52:in `block in serve'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `each'
+actionpack (5.2.3) lib/action_dispatch/journey/router.rb:35:in `serve'
+actionpack (5.2.3) lib/action_dispatch/routing/route_set.rb:840:in `call'
+rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.0.7) lib/rack/etag.rb:25:in `call'
+rack (2.0.7) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.7) lib/rack/head.rb:12:in `call'
+actionpack (5.2.3) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/cookies.rb:670:in `call'
+activerecord (5.2.3) lib/active_record/migration.rb:559:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+activesupport (5.2.3) lib/active_support/callbacks.rb:98:in `run_callbacks'
+actionpack (5.2.3) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:61:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started POST "/api/v1/professors" for ::1 at 2019-06-05 10:37:25 -0300
+Processing by Api::V1::ProfessorsController#create as */*
+  Parameters: {"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455", "professor"=>{"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455"}}
+Unpermitted parameter: :professor
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:19
+  [1m[36mProfessor Create (0.5ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Mario Virus"], ["sala", "33C"], ["email", "marios.virus@email.com"], ["telefone", "1234-4455"], ["created_at", "2019-06-05 13:37:25.222502"], ["updated_at", "2019-06-05 13:37:25.222502"]]
+  ↳ app/controllers/api/v1/professors_controller.rb:19
+  [1m[35m (97.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:19
+Completed 200 OK in 114ms (Views: 0.8ms | ActiveRecord: 98.6ms)
+
+
+Started DELETE "/api/v1/professors/2" for ::1 at 2019-06-05 10:42:20 -0300
+  
+SyntaxError (/home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/professors_controller.rb:40: syntax error, unexpected end, expecting end-of-input):
+  
+app/controllers/api/v1/professors_controller.rb:40: syntax error, unexpected end, expecting end-of-input
+Started DELETE "/api/v1/professors/2" for ::1 at 2019-06-05 10:42:51 -0300
+Processing by Api::V1::ProfessorsController#destroy as */*
+  Parameters: {"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455", "id"=>"2", "professor"=>{"nomeProfessor"=>"Mario Virus", "sala"=>"33C", "email"=>"marios.virus@email.com", "telefone"=>"1234-4455"}}
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/professors_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:29
+  [1m[36mProfessor Destroy (0.3ms)[0m  [1m[31mDELETE FROM "professors" WHERE "professors"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/api/v1/professors_controller.rb:29
+  [1m[35m (119.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:29
+Completed 200 OK in 135ms (Views: 0.6ms | ActiveRecord: 121.0ms)
+
+
+Started PUT "/api/v1/professors/1" for ::1 at 2019-06-05 10:51:03 -0300
+Processing by Api::V1::ProfessorsController#update as */*
+  Parameters: {"formacao"=>"lorem ipsum", "id"=>"1", "professor"=>{"formacao"=>"lorem ipsum"}}
+  [1m[36mProfessor Load (0.2ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/professors_controller.rb:34
+Unpermitted parameters: :id, :professor
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:35
+  [1m[36mProfessor Update (0.3ms)[0m  [1m[33mUPDATE "professors" SET "formacao" = ?, "updated_at" = ? WHERE "professors"."id" = ?[0m  [["formacao", "lorem ipsum"], ["updated_at", "2019-06-05 13:51:03.175475"], ["id", 1]]
+  ↳ app/controllers/api/v1/professors_controller.rb:35
+  [1m[35m (98.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/professors_controller.rb:35
+Completed 200 OK in 116ms (Views: 0.7ms | ActiveRecord: 100.4ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (96.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (76.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ bin/rails:9
+  [1m[35m (103.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ bin/rails:9
+  [1m[35m (79.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ bin/rails:9
+  [1m[35m (80.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ bin/rails:9
+  [1m[35m (81.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ bin/rails:9
+  [1m[35m (82.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ bin/rails:9
+  [1m[35m (100.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-05 14:13:47.597186"], ["updated_at", "2019-06-05 14:13:47.597186"]]
+  ↳ bin/rails:9
+  [1m[35m (72.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Rafael Durelli"], ["sala", "22B"], ["email", "rafa.durelli@email.com"], ["telefone", "(25)5555-6666"], ["created_at", "2019-06-05 14:13:55.890646"], ["updated_at", "2019-06-05 14:13:55.890646"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (59.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAluno Create (0.5ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Ítalo Silva"], ["categoria", "Graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-05 14:13:55.992353"], ["updated_at", "2019-06-05 14:13:55.992353"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (79.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mAluno Create (0.3ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Pedro Henrique"], ["categoria", "Pós-graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-05 14:13:56.075006"], ["updated_at", "2019-06-05 14:13:56.075006"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (52.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAluno Create (0.4ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Jonas Brother"], ["categoria", "Graduação"], ["curso", "Sistemas de Informação"], ["created_at", "2019-06-05 14:13:56.130899"], ["updated_at", "2019-06-05 14:13:56.130899"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (74.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+Started GET "/api/v1/alunos" for ::1 at 2019-06-05 11:14:30 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+LoadError (Unable to autoload constant Api::V1::ApplicationController, expected /home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/application_controller.rb to define it):
+  
+app/controllers/api/v1/alunos_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/alunos_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/alunos_controller.rb:1:in `<main>'
+Started GET "/api/v1/alunos" for ::1 at 2019-06-05 11:15:18 -0300
+Processing by Api::V1::AlunosController#index as */*
+  Parameters: {"formacao"=>"lorem ipsum", "aluno"=>{}}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:9
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/v1/alunos/1" for ::1 at 2019-06-05 11:15:57 -0300
+Processing by Api::V1::AlunosController#show as */*
+  Parameters: {"formacao"=>"lorem ipsum", "id"=>"1", "aluno"=>{}}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:13
+Completed 200 OK in 12ms (Views: 0.6ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/api/v1/alunos" for ::1 at 2019-06-05 11:17:23 -0300
+Processing by Api::V1::AlunosController#create as */*
+  Parameters: {"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação", "aluno"=>{"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação"}}
+Unpermitted parameter: :aluno
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:20
+  [1m[36mAluno Create (0.6ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Aluno Teste"], ["categoria", "Graduação"], ["curso", "Sistemas de Informação"], ["created_at", "2019-06-05 14:17:23.578318"], ["updated_at", "2019-06-05 14:17:23.578318"]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:20
+  [1m[35m (107.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:20
+Completed 200 OK in 117ms (Views: 0.6ms | ActiveRecord: 108.4ms)
+
+
+Started GET "/api/v1/alunos" for ::1 at 2019-06-05 11:17:38 -0300
+Processing by Api::V1::AlunosController#index as */*
+  Parameters: {"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação", "aluno"=>{"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação"}}
+  [1m[36mAluno Load (0.3ms)[0m  [1m[34mSELECT "alunos".* FROM "alunos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:9
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/api/v1/alunos/4" for ::1 at 2019-06-05 11:18:00 -0300
+Processing by Api::V1::AlunosController#destroy as */*
+  Parameters: {"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação", "id"=>"4", "aluno"=>{"nome"=>"Aluno Teste", "categoria"=>"Graduação", "curso"=>"Sistemas de Informação"}}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:29
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:30
+  [1m[36mAluno::HABTM_Projetos Destroy (0.1ms)[0m  [1m[31mDELETE FROM "alunos_projetos" WHERE "alunos_projetos"."aluno_id" = ?[0m  [["aluno_id", 4]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:30
+  [1m[36mAluno Destroy (0.3ms)[0m  [1m[31mDELETE FROM "alunos" WHERE "alunos"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:30
+  [1m[35m (76.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:30
+Completed 200 OK in 238ms (Views: 0.7ms | ActiveRecord: 77.2ms)
+
+
+Started PUT "/api/v1/alunos/3" for ::1 at 2019-06-05 11:19:22 -0300
+Processing by Api::V1::AlunosController#update as */*
+  Parameters: {"nome"=>"Jonas Monkey", "id"=>"3", "aluno"=>{"nome"=>"Jonas Monkey"}}
+  [1m[36mAluno Load (0.2ms)[0m  [1m[34mSELECT  "alunos".* FROM "alunos" WHERE "alunos"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:35
+Unpermitted parameters: :id, :aluno
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:36
+  [1m[36mAluno Update (1.4ms)[0m  [1m[33mUPDATE "alunos" SET "nome" = ?, "updated_at" = ? WHERE "alunos"."id" = ?[0m  [["nome", "Jonas Monkey"], ["updated_at", "2019-06-05 14:19:22.838018"], ["id", 3]]
+  ↳ app/controllers/api/v1/alunos_controller.rb:36
+  [1m[35m (111.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/alunos_controller.rb:36
+Completed 200 OK in 121ms (Views: 0.7ms | ActiveRecord: 112.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (109.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (76.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ bin/rails:9
+  [1m[35m (76.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ bin/rails:9
+  [1m[35m (73.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ bin/rails:9
+  [1m[35m (74.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ bin/rails:9
+  [1m[35m (75.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ bin/rails:9
+  [1m[35m (63.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ bin/rails:9
+  [1m[35m (71.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-05 14:33:58.014443"], ["updated_at", "2019-06-05 14:33:58.014443"]]
+  ↳ bin/rails:9
+  [1m[35m (71.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Rafael Durelli"], ["sala", "22B"], ["email", "rafa.durelli@email.com"], ["telefone", "(25)5555-6666"], ["created_at", "2019-06-05 14:34:25.920764"], ["updated_at", "2019-06-05 14:34:25.920764"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (61.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mAluno Create (0.3ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Ítalo Silva"], ["categoria", "Graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-05 14:34:25.998652"], ["updated_at", "2019-06-05 14:34:25.998652"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (50.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mAluno Create (0.4ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Pedro Henrique"], ["categoria", "Pós-graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-05 14:34:26.051407"], ["updated_at", "2019-06-05 14:34:26.051407"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (74.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mAluno Create (0.4ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Jonas Brother"], ["categoria", "Graduação"], ["curso", "Sistemas de Informação"], ["created_at", "2019-06-05 14:34:26.129017"], ["updated_at", "2019-06-05 14:34:26.129017"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (52.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProjeto Create (0.4ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 1"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-05 14:34:26.198776"], ["updated_at", "2019-06-05 14:34:26.198776"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (48.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 2"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-05 14:34:26.250486"], ["updated_at", "2019-06-05 14:34:26.250486"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (52.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 3"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-05 14:34:26.306080"], ["updated_at", "2019-06-05 14:34:26.306080"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (137.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 4"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-05 14:34:26.462209"], ["updated_at", "2019-06-05 14:34:26.462209"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (51.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:55
+Started GET "/api/v1/projetos" for ::1 at 2019-06-05 11:35:00 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/projetos"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/projetos" for ::1 at 2019-06-05 11:35:54 -0300
+  
+LoadError (Unable to autoload constant Api::V1::ApplicationController, expected /home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/application_controller.rb to define it):
+  
+app/controllers/api/v1/projetos_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/projetos_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/projetos_controller.rb:1:in `<main>'
+Started GET "/api/v1/projetos" for ::1 at 2019-06-05 11:36:25 -0300
+Processing by Api::V1::ProjetosController#index as */*
+  Parameters: {"nome"=>"Jonas Monkey", "projeto"=>{}}
+  [1m[36mProjeto Load (0.4ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:8
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/v1/projetos/1" for ::1 at 2019-06-05 11:37:04 -0300
+Processing by Api::V1::ProjetosController#show as */*
+  Parameters: {"nome"=>"Jonas Monkey", "id"=>"1", "projeto"=>{}}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:12
+Completed 200 OK in 17ms (Views: 0.8ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/api/v1/projetos" for ::1 at 2019-06-05 11:38:39 -0300
+Processing by Api::V1::ProjetosController#create as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste", "inicio"=>2017, "termino"=>2018, "projeto"=>{"nomeProjeto"=>"Projeto Teste", "inicio"=>2017, "termino"=>2018}}
+Unpermitted parameter: :projeto
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:19
+  [1m[36mProjeto Create (0.4ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto Teste"], ["inicio", 2017], ["termino", 2018], ["created_at", "2019-06-05 14:38:39.006553"], ["updated_at", "2019-06-05 14:38:39.006553"]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:19
+  [1m[35m (124.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:19
+Completed 200 OK in 131ms (Views: 0.7ms | ActiveRecord: 124.5ms)
+
+
+Started GET "/api/v1/projetos" for ::1 at 2019-06-05 11:38:49 -0300
+Processing by Api::V1::ProjetosController#index as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste", "inicio"=>2017, "termino"=>2018, "projeto"=>{"nomeProjeto"=>"Projeto Teste", "inicio"=>2017, "termino"=>2018}}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:8
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.3ms)
+
+
+Started PUT "/api/v1/projetos/5" for ::1 at 2019-06-05 11:39:14 -0300
+Processing by Api::V1::ProjetosController#update as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste 2", "id"=>"5", "projeto"=>{"nomeProjeto"=>"Projeto Teste 2"}}
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:34
+Unpermitted parameters: :id, :projeto
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:35
+  [1m[36mProjeto Update (0.4ms)[0m  [1m[33mUPDATE "projetos" SET "nomeProjeto" = ?, "updated_at" = ? WHERE "projetos"."id" = ?[0m  [["nomeProjeto", "Projeto Teste 2"], ["updated_at", "2019-06-05 14:39:14.579211"], ["id", 5]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:35
+  [1m[35m (117.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:35
+Completed 200 OK in 126ms (Views: 0.7ms | ActiveRecord: 118.4ms)
+
+
+Started DELETE "/api/v1/projetos/5" for ::1 at 2019-06-05 11:39:32 -0300
+Processing by Api::V1::ProjetosController#destroy as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste 2", "id"=>"5", "projeto"=>{"nomeProjeto"=>"Projeto Teste 2"}}
+  [1m[36mProjeto Load (0.2ms)[0m  [1m[34mSELECT  "projetos".* FROM "projetos" WHERE "projetos"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:29
+  [1m[36mProjeto::HABTM_Alunos Destroy (0.3ms)[0m  [1m[31mDELETE FROM "alunos_projetos" WHERE "alunos_projetos"."projeto_id" = ?[0m  [["projeto_id", 5]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:29
+  [1m[36mProjeto Destroy (0.3ms)[0m  [1m[31mDELETE FROM "projetos" WHERE "projetos"."id" = ?[0m  [["id", 5]]
+  ↳ app/controllers/api/v1/projetos_controller.rb:29
+  [1m[35m (114.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:29
+Completed 200 OK in 147ms (Views: 0.7ms | ActiveRecord: 116.2ms)
+
+
+Started DELETE "/api/v1/projetos/" for ::1 at 2019-06-05 11:39:37 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/api/v1/projetos"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/projetos/" for ::1 at 2019-06-05 11:39:46 -0300
+Processing by Api::V1::ProjetosController#index as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste 2", "projeto"=>{"nomeProjeto"=>"Projeto Teste 2"}}
+  [1m[36mProjeto Load (0.3ms)[0m  [1m[34mSELECT "projetos".* FROM "projetos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/projetos_controller.rb:8
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (217.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (190.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ bin/rails:9
+  [1m[35m (140.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ bin/rails:9
+  [1m[35m (129.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ bin/rails:9
+  [1m[35m (130.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ bin/rails:9
+  [1m[35m (95.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ bin/rails:9
+  [1m[35m (106.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ bin/rails:9
+  [1m[35m (117.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-06 10:42:21.692452"], ["updated_at", "2019-06-06 10:42:21.692452"]]
+  ↳ bin/rails:9
+  [1m[35m (62.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mProfessor Create (0.4ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Rafael Durelli"], ["sala", "22B"], ["email", "rafa.durelli@email.com"], ["telefone", "(25)5555-6666"], ["created_at", "2019-06-06 10:42:21.803985"], ["updated_at", "2019-06-06 10:42:21.803985"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (98.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAluno Create (0.5ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Ítalo Silva"], ["categoria", "Graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-06 10:42:21.955404"], ["updated_at", "2019-06-06 10:42:21.955404"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (101.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mAluno Create (0.6ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Pedro Henrique"], ["categoria", "Pós-graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-06 10:42:22.061951"], ["updated_at", "2019-06-06 10:42:22.061951"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (83.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mAluno Create (0.3ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Jonas Brother"], ["categoria", "Graduação"], ["curso", "Sistemas de Informação"], ["created_at", "2019-06-06 10:42:22.149782"], ["updated_at", "2019-06-06 10:42:22.149782"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (109.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProjeto Create (0.4ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 1"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 10:42:22.291760"], ["updated_at", "2019-06-06 10:42:22.291760"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (82.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProjeto Create (0.7ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 2"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 10:42:22.379642"], ["updated_at", "2019-06-06 10:42:22.379642"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (86.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 3"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 10:42:22.471610"], ["updated_at", "2019-06-06 10:42:22.471610"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (57.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mProjeto Create (0.4ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 4"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 10:42:22.534406"], ["updated_at", "2019-06-06 10:42:22.534406"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (61.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[36mAula Create (0.3ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 1"], ["categoria", "Graduação"], ["quantidade", 3], ["created_at", "2019-06-06 10:42:22.621198"], ["updated_at", "2019-06-06 10:42:22.621198"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (63.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[36mAula Create (0.4ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 2"], ["categoria", "Pós-graduação"], ["quantidade", 2], ["created_at", "2019-06-06 10:42:22.689792"], ["updated_at", "2019-06-06 10:42:22.689792"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (109.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:67
+  [1m[36mAula Create (0.3ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 3"], ["categoria", "Graduação"], ["quantidade", 1], ["created_at", "2019-06-06 10:42:22.805310"], ["updated_at", "2019-06-06 10:42:22.805310"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (78.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mPublicacao Create (0.3ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 1"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao1.bib"], ["created_at", "2019-06-06 10:42:22.914690"], ["updated_at", "2019-06-06 10:42:22.914690"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (61.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[36mPublicacao Create (0.3ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 2"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao2.bib"], ["created_at", "2019-06-06 10:42:22.980286"], ["updated_at", "2019-06-06 10:42:22.980286"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (83.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:85
+  [1m[36mPublicacao Create (0.3ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 3"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao3.bib"], ["created_at", "2019-06-06 10:42:23.069196"], ["updated_at", "2019-06-06 10:42:23.069196"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (94.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:85
+Started GET "/api/v1/aulas" for ::1 at 2019-06-06 07:44:10 -0300
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/italo/.rbenv/versions/2.6.2/lib/ruby/gems/2.6.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+  
+LoadError (Unable to autoload constant Api::V1::ApplicationController, expected /home/italo/20191/Programação Web/Trabalho1-Programacao-Web/app/controllers/api/v1/application_controller.rb to define it):
+  
+app/controllers/api/v1/aulas_controller.rb:3:in `<module:V1>'
+app/controllers/api/v1/aulas_controller.rb:2:in `<module:Api>'
+app/controllers/api/v1/aulas_controller.rb:1:in `<main>'
+Started GET "/api/v1/aulas" for ::1 at 2019-06-06 07:44:18 -0300
+Processing by Api::V1::AulasController#index as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste 2", "aula"=>{}}
+  [1m[36mAula Load (0.3ms)[0m  [1m[34mSELECT "aulas".* FROM "aulas" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/aulas_controller.rb:8
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/api/v1/publicacoes" for ::1 at 2019-06-06 07:44:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/publicacoes"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/publicacoes" for ::1 at 2019-06-06 07:44:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/api/v1/publicacoes"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+webpacker (4.0.2) lib/webpacker/dev_server_proxy.rb:29:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/v1/publicacaos" for ::1 at 2019-06-06 07:44:48 -0300
+Processing by Api::V1::PublicacaosController#index as */*
+  Parameters: {"nomeProjeto"=>"Projeto Teste 2", "publicacao"=>{}}
+  [1m[36mPublicacao Load (0.4ms)[0m  [1m[34mSELECT "publicacaos".* FROM "publicacaos" ORDER BY id DESC[0m
+  ↳ app/controllers/api/v1/publicacaos_controller.rb:9
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 1.4ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (119.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (63.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunos (20190424131654)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "alunos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nome" varchar, "categoria" varchar, "curso" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424131654_create_alunos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424131654"]]
+  ↳ bin/rails:9
+  [1m[35m (79.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProfessors (20190424134523)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "professors" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProfessor" varchar, "formacao" text, "sala" varchar, "email" varchar, "telefone" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424134523_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424134523"]]
+  ↳ bin/rails:9
+  [1m[35m (72.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAulas (20190424135131)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "aulas" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeAula" varchar, "categoria" varchar, "quantidade" integer, "materialDidatico" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135131_create_aulas.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135131"]]
+  ↳ bin/rails:9
+  [1m[35m (88.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateProjetos (20190424135832)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "projetos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomeProjeto" varchar, "inicio" integer, "termino" integer, "resumo" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135832_create_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135832"]]
+  ↳ bin/rails:9
+  [1m[35m (93.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreatePublicacaos (20190424135914)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "publicacaos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "nomePublicacao" varchar, "categoria" varchar, "arquivoBib" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190424135914_create_publicacaos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190424135914"]]
+  ↳ bin/rails:9
+  [1m[35m (106.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAlunosProjetos (20190426000040)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "alunos_projetos" ("aluno_id" integer NOT NULL, "projeto_id" integer NOT NULL)[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_aluno_id" ON "alunos_projetos" ("aluno_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_alunos_projetos_on_projeto_id" ON "alunos_projetos" ("projeto_id")[0m
+  ↳ db/migrate/20190426000040_create_alunos_projetos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190426000040"]]
+  ↳ bin/rails:9
+  [1m[35m (94.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-06-06 11:00:43.115381"], ["updated_at", "2019-06-06 11:00:43.115381"]]
+  ↳ bin/rails:9
+  [1m[35m (43.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[36mProfessor Create (0.3ms)[0m  [1m[32mINSERT INTO "professors" ("nomeProfessor", "sala", "email", "telefone", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProfessor", "Rafael Durelli"], ["sala", "22B"], ["email", "rafa.durelli@email.com"], ["telefone", "(25)5555-6666"], ["created_at", "2019-06-06 11:00:43.185360"], ["updated_at", "2019-06-06 11:00:43.185360"]]
+  ↳ db/seeds.rb:2
+  [1m[35m (52.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:2
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mAluno Create (0.4ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Ítalo Silva"], ["categoria", "Graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-06 11:00:43.257245"], ["updated_at", "2019-06-06 11:00:43.257245"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (57.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mAluno Create (0.4ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Pedro Henrique"], ["categoria", "Pós-graduação"], ["curso", "Ciência da Computação"], ["created_at", "2019-06-06 11:00:43.319723"], ["updated_at", "2019-06-06 11:00:43.319723"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (50.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mAluno Create (0.5ms)[0m  [1m[32mINSERT INTO "alunos" ("nome", "categoria", "curso", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nome", "Jonas Brother"], ["categoria", "Graduação"], ["curso", "Sistemas de Informação"], ["created_at", "2019-06-06 11:00:43.376770"], ["updated_at", "2019-06-06 11:00:43.376770"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (70.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mProjeto Create (0.3ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 1"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 11:00:43.464733"], ["updated_at", "2019-06-06 11:00:43.464733"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (72.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[36mProjeto Create (0.5ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 2"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 11:00:43.540592"], ["updated_at", "2019-06-06 11:00:43.540592"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (72.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:34
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mProjeto Create (1.6ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 3"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 11:00:43.619413"], ["updated_at", "2019-06-06 11:00:43.619413"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (49.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mProjeto Create (0.5ms)[0m  [1m[32mINSERT INTO "projetos" ("nomeProjeto", "inicio", "termino", "resumo", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["nomeProjeto", "Projeto 4"], ["inicio", 2018], ["termino", 2019], ["resumo", "lorem"], ["created_at", "2019-06-06 11:00:43.674808"], ["updated_at", "2019-06-06 11:00:43.674808"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (49.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[36mAula Create (0.3ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 1"], ["categoria", "Graduação"], ["quantidade", 3], ["created_at", "2019-06-06 11:00:43.745971"], ["updated_at", "2019-06-06 11:00:43.745971"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (45.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[36mAula Create (0.3ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 2"], ["categoria", "Pós-graduação"], ["quantidade", 2], ["created_at", "2019-06-06 11:00:43.796573"], ["updated_at", "2019-06-06 11:00:43.796573"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (50.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:67
+  [1m[36mAula Create (0.4ms)[0m  [1m[32mINSERT INTO "aulas" ("nomeAula", "categoria", "quantidade", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomeAula", "Aula 3"], ["categoria", "Graduação"], ["quantidade", 1], ["created_at", "2019-06-06 11:00:43.850823"], ["updated_at", "2019-06-06 11:00:43.850823"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (48.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[36mPublicacao Create (0.3ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 1"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao1.bib"], ["created_at", "2019-06-06 11:00:43.930892"], ["updated_at", "2019-06-06 11:00:43.930892"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (59.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[36mPublicacao Create (0.3ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 2"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao2.bib"], ["created_at", "2019-06-06 11:00:43.994606"], ["updated_at", "2019-06-06 11:00:43.994606"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (62.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:85
+  [1m[36mPublicacao Create (0.4ms)[0m  [1m[32mINSERT INTO "publicacaos" ("nomePublicacao", "categoria", "arquivoBib", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["nomePublicacao", "Publicação 3"], ["categoria", "Artigo"], ["arquivoBib", "path/para/publicacao3.bib"], ["created_at", "2019-06-06 11:00:44.061541"], ["updated_at", "2019-06-06 11:00:44.061541"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (61.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:85

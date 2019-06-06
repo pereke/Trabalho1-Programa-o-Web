@@ -13,7 +13,6 @@
 ActiveRecord::Schema.define(version: 2019_04_26_000040) do
 
   create_table "alunos", force: :cascade do |t|
-    t.string "idAluno"
     t.string "nome"
     t.string "categoria"
     t.string "curso"
@@ -32,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.string "nomeAula"
     t.string "categoria"
     t.integer "quantidade"
+    t.string "materialDidatico"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
