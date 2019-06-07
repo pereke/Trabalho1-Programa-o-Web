@@ -60,3 +60,21 @@ O Presente projeto tem por objetivo a criação de um sistema WEB para um docent
 
 Para executar, entre no diretório do projeto e execute:
 `$ bin/rails server`
+
+
+## Descrição de padrões e convenções
+**Nomes de métodos**: Os métodos seguem a convenção snake_case, onde todas as letras são minúsculas e separadas por ‘_’.
+
+**Escopos**: 
+* Variáveis globais, definidas por um ‘$’ no começo;
+* Variáveis de instância, definidas por um ‘@’ no começo;
+* Variáveis locais, que são nomes simples, ou então começam ‘_’;
+* Variáveis de classe, que possuem ‘@@’ no inicio e;
+* Constantes, que são nomeadas em maiúsculo.
+
+**Comentários**: Adicione comentários para facilitar a compreensão do código. Mantenha o comentário simples e separe-os de tal forma o código fique limpo e legível. Escreva também os comentários onde alguma explanação é necessária. Não escreva comentários para as coisas óbvias.
+
+**Espaços em Branco e Tabulação**: Use o espaço em branco para melhorar a legibilidade do código. Exemplo: Entre uma palavra-chave e um parêntese ou após vírgulas na lista entre parênteses
+
+**Chaves ou Blocos**: Siga um esquema consistente para a abertura e fechamento de chaves. Alinhe a abertura e fechamento das chaves verticalmente. Isto facilitará a identificação do começo e término dos blocos.
+
