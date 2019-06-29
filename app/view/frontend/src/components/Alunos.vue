@@ -12,7 +12,7 @@
                 <td class="text-xs-left">{{ props.item.curso }}</td>
                 <td class="text-xs-left">{{ props.item.categoria }}</td>
                 <td class="justify-center layout px-0">
-                    <v-dialog v-model="dialog2">
+                    <v-dialog v-model="dialogNote[props.item.id]" :key="props.item.id">
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" icon>
                                 <v-icon small class="mr-2">edit</v-icon>
@@ -25,7 +25,12 @@
                             > Editar Aluno
                             </v-card-title>
                             <v-card-text>
-                                <app-editar-alunos v-bind:aluno="props.item" @fechar="fecharEditarAluno()" @salvar="salvarEditarAluno()"></app-editar-alunos>
+                                <app-editar-alunos v-bind:key="props.item.id"
+                                    v-bind:idaluno="props.item.id"
+                                    v-bind:novo="false"
+                                    @fechar="fecharEditarAluno(props.item)"
+                                    @salvar="fecharEditarAluno(props.item)">
+                                </app-editar-alunos>
                             </v-card-text>
                         </v-card>
                     </v-dialog>
@@ -49,7 +54,7 @@
                     > Adicionar Aluno
                     </v-card-title>
                     <v-card-text>
-                        <EditarAlunos @fechar="fecharAdicionarAluno()" @salvar="salvarAdicionarAluno()"/>
+                        <EditarAlunos @fechar="fecharAdicionarAluno()" @salvar="fecharAdicionarAluno()"/>
                     </v-card-text>
                 </v-card>
             </v-dialog>
@@ -75,7 +80,7 @@
         data () {
             return {
                 dialog: false,
-                dialog2: false,
+                dialogNote: {},
                 headers: [
                 { text: 'Nome', value: 'nome', align: 'center', sortable: false },
                 { text: 'Matricula', value: 'matricula', sortable: false },
@@ -83,30 +88,26 @@
                 { text: 'Categoria', value: 'categoria', sortable: false },
                 { text: 'Ações', value: 'nome', sortable: false },
                 ],
-                alunos: []
+                alunos: [],
             }
         },
         created() {
-            this.$http.secured.get('/api/v1/alunos')
-                .then(response => { this.alunos = response.data.data })
-                .catch(error => this.setError(error, 'Algo deu errado!'))
+            this.atualizarTabela()
         },
         methods: {
             setError (error, text) {
                 this.error = (error.response && error.response.data && error.response.data.error) || text
             },
-            fecharEditarAluno() {
-                this.dialog2 = false
+            atualizarTabela() {
+                this.$http.secured.get('/api/v1/alunos')
+                    .then(response => { this.alunos = response.data.data })
+                    .catch(error => this.setError(error, 'Algo deu errado!'))
+            },
+            fecharEditarAluno(aluno) {
+                this.dialogNote[aluno.id] = false
+                this.atualizarTabela()
             },
             fecharAdicionarAluno() {
-                this.dialog = false
-            },
-            salvarEditarAluno() {
-                // TODO métodos de edição de aluno
-                this.dialog2 = false
-            },
-            salvarAdicionarAluno() {
-                // TODO métodos de adição de aluno
                 this.dialog = false
             },
             deletarAluno(aluno) {

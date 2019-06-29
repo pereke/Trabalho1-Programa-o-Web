@@ -37,8 +37,9 @@
 
 <script>
 export default {
-    props: ['aluno'],
+    props: ['idaluno','novo'],
     data: () => ({
+        aluno: Object,
         valid: false,
         nomeCompleto: '',
         matricula: '',
@@ -56,11 +57,18 @@ export default {
         categorias: ['Graduação', 'Pós-graduação']
     }),
     created() {
-        if(this.aluno) {
-            this.nomeCompleto = this.aluno.nome
-            this.matricula = this.aluno.matricula
-            this.curso = this.aluno.curso
-            this.categoria = this.aluno.categoria
+        if(!this.novo) {
+            this.$http.secured.get(`/api/v1/alunos/${this.idaluno}`)
+                .then(response =>{
+                    this.aluno = response.data.data
+                    this.nomeCompleto = this.aluno.nome
+                    this.matricula = this.aluno.matricula
+                    this.curso = this.aluno.curso
+                    this.categoria = this.aluno.categoria
+                    }
+                )
+                .catch(error => this.setError(error, 'Nao consegue achar aluno'))
+
         }
     },
     methods: {
@@ -69,6 +77,22 @@ export default {
         },
         salvarAluno() {
             this.$emit('salvar')
+            if(this.novo) {
+                this.$http.secured.post('/api/v1/alunos/', {
+                    nome: this.nomeCompleto,
+                    matricula: this.matricula,
+                    curso: this.curso,
+                    categoria: this.categoria
+                })
+            } else {
+                this.$http.secured.patch(`/api/v1/alunos/${this.aluno.id}`, {
+                    nome: this.nomeCompleto,
+                    matricula: this.matricula,
+                    curso: this.curso,
+                    categoria: this.categoria
+                })
+            }
+
         }
     }
 }

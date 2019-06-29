@@ -14,7 +14,7 @@
                     <v-icon small>insert_drive_file</v-icon>
                 </td>
                 <td class="justify-center layout px-0">
-                    <v-dialog v-model="dialog2">
+                    <v-dialog v-model="dialogNote[props.item.id]" :key="props.item.id">
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" icon>
                                 <v-icon small class="mr-2">edit</v-icon>
@@ -27,11 +27,17 @@
                             > Editar Projeto de Pequisa
                             </v-card-title>
                             <v-card-text>
-                                <EditarProjetosPesquisa @fechar="fecharEditarProjetoPesquisa()" @salvar="salvarEditarProjetoPesquisa()"/>
+                                <app-editar-projetos-pesquisa
+                                    v-bind:key="props.item.id"
+                                    v-bind:idprojeto="props.item.id"
+                                    v-bind:novo="false"
+                                    @fechar="fecharEditarProjetoPesquisa(props.item)"
+                                    @salvar="fecharEditarProjetoPesquisa(props.item)">
+                                </app-editar-projetos-pesquisa>
                             </v-card-text>
                         </v-card>
                     </v-dialog>
-                    <v-btn icon v-on="deletarProjetoPesquisa">
+                    <v-btn icon v-on:click="deletarProjetoPesquisa(props.item)">
                         <v-icon small>delete</v-icon>
                     </v-btn>
                 </td>
@@ -71,12 +77,12 @@
     import EditarProjetosPesquisa from './EditarProjetosPesquisa.vue'
     export default {
         components: {
-            EditarProjetosPesquisa
+            appEditarProjetosPesquisa: EditarProjetosPesquisa
         },
         data () {
             return {
                 dialog: false,
-                dialog2: false,
+                dialogNote: {},
                 headers: [
                 { text: 'Nome', value: 'nome',  sortable: false, align: 'center' },
                 { text: 'Ano de Início', value: 'anoInicio',  sortable: false },
@@ -88,30 +94,28 @@
             }
         },
         created() {
-            this.$http.secured.get('/api/v1/projetos')
-            .then(response => { this.projetos_pesquisa = response.data.data })
-            .catch(error => this.setError(error, 'Algo deu errado!'))
+            this.atualizarTabela()
         },
         methods: {
             setError (error, text) {
                 this.error = (error.response && error.response.data && error.response.data.error) || text
             },
-            fecharEditarProjetoPesquisa() {
-                this.dialog2 = false
+            atualizarTabela() {
+                this.$http.secured.get('/api/v1/projetos')
+                .then(response => { this.projetos_pesquisa = response.data.data })
+                .catch(error => this.setError(error, 'Algo deu errado!'))
             },
-            fecharAdicionarProjetoPesquisa() {
-                this.dialog = false
+            fecharEditarProjetoPesquisa(projeto) {
+                this.dialogNote[projeto.id] = false
+                this.atualizarTabela()
             },
-            salvarEditarProjetoPesquisa() {
-                // TODO métodos de edição de projetopesquisa
-                this.dialog2 = false
+            fecharAdicionarProjetoPesquisa(projeto) {
+                this.dialogNote[projeto.id] = false
             },
-            salvarAdicionarProjetoPesquisa() {
-                // TODO métodos de adição de projetopesquisa
-                this.dialog = false
-            },
-            deletarProjetoPesquisa() {
-                // TODO deletar aluno
+            deletarProjetoPesquisa(projeto) {
+                this.$http.secured.delete(`/api/v1/projetos/${projeto.id}`)
+                .then(this.projetos_pesquisa.splice(this.projetos_pesquisa.indexOf(projeto), 1))
+                .catch(error => this.setError(error, 'Nao consegue deletar projeto'))
             }
         }
     }
