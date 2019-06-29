@@ -1,7 +1,7 @@
 module Api
   module V1
     class ProfessorsController < ApplicationController
-      skip_before_action :verify_authenticity_token
+      before_action :authorize_access_request!
 
       def index
         professors = Professor.order('id DESC')
@@ -44,7 +44,7 @@ module Api
       private
 
       def professor_params
-        params.permit(:nomeProfessor, :formacao, :sala, :email, :telefone)
+        params.permit(:nomeProfessor, :formacao, :sala, :email, :telefone, :password, :id)
       end
     end
   end

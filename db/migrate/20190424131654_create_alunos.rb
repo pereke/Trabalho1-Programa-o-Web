@@ -4,6 +4,7 @@ class CreateAlunos < ActiveRecord::Migration[5.2]
       t.string :nome
       t.string :categoria
       t.string :curso
+      t.string :matricula
       t.timestamps
     end
   end

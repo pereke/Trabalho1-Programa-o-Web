@@ -25,11 +25,11 @@
                             > Editar Aluno
                             </v-card-title>
                             <v-card-text>
-                                <EditarAlunos @fechar="fecharEditarAluno()" @salvar="salvarEditarAluno()"/>
+                                <app-editar-alunos v-bind:aluno="props.item" @fechar="fecharEditarAluno()" @salvar="salvarEditarAluno()"></app-editar-alunos>
                             </v-card-text>
                         </v-card>
                     </v-dialog>
-                    <v-btn icon v-on="deletarAluno">
+                    <v-btn icon v-on:click="deletarAluno(props.item)">
                         <v-icon small>delete</v-icon>
                     </v-btn>
                 </td>
@@ -56,7 +56,7 @@
         </v-container>
     </v-flex>
     </v-layout>
-    
+
 </template>
 
 
@@ -70,7 +70,7 @@
     export default {
         name: "App",
         components: {
-            EditarAlunos
+            appEditarAlunos: EditarAlunos
         },
         data () {
             return {
@@ -83,29 +83,18 @@
                 { text: 'Categoria', value: 'categoria', sortable: false },
                 { text: 'Ações', value: 'nome', sortable: false },
                 ],
-                alunos: [
-                {
-                    nome: 'Gabriel',
-                    matricula: 21611342,
-                    curso: 'Ciência da Computação',
-                    categoria: 'Graduação'
-                },
-                {
-                    nome: 'Itlão',
-                    matricula: 21611421,
-                    curso: 'Ciência da Computação',
-                    categoria: 'Graduação'
-                },
-                {
-                    nome: 'Pereke',
-                    matricula: 21611482,
-                    curso: 'Sistemas de Informação',
-                    categoria: 'Pós-Graduação'
-                }
-                ]
+                alunos: []
             }
         },
+        created() {
+            this.$http.secured.get('/api/v1/alunos')
+                .then(response => { this.alunos = response.data.data })
+                .catch(error => this.setError(error, 'Algo deu errado!'))
+        },
         methods: {
+            setError (error, text) {
+                this.error = (error.response && error.response.data && error.response.data.error) || text
+            },
             fecharEditarAluno() {
                 this.dialog2 = false
             },
@@ -113,15 +102,17 @@
                 this.dialog = false
             },
             salvarEditarAluno() {
-                // TODO métodos de edição de aluno  
+                // TODO métodos de edição de aluno
                 this.dialog2 = false
             },
             salvarAdicionarAluno() {
                 // TODO métodos de adição de aluno
                 this.dialog = false
             },
-            deletarAluno() {
-                // TODO deletar aluno
+            deletarAluno(aluno) {
+                this.$http.secured.delete(`/api/v1/alunos/${aluno.id}`)
+                .then(this.alunos.splice(this.alunos.indexOf(aluno), 1))
+                .catch(error => this.setError(error, 'Nao consegue deletar aluno'))
             }
         }
     }

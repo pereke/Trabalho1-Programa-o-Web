@@ -2,7 +2,7 @@ module Api
   module V1
     class PublicacaosController < ApplicationController
       # before_action :set_aluno, only: [:show, :edit, :update, :destroy]
-      skip_before_action :verify_authenticity_token
+      before_action :authorize_access_request!
 
       def index
         publicacoes = Publicacao.order('id DESC')
@@ -46,7 +46,7 @@ module Api
       def publicacao_params
         params.permit(:nomePublicacao, :categoria, :arquivoBib)
       end
-      
+
     end
   end
 end

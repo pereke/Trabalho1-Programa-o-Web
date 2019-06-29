@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.string "nome"
     t.string "categoria"
     t.string "curso"
+    t.string "matricula"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
   create_table "professors", force: :cascade do |t|
     t.string "nomeProfessor"
     t.text "formacao"
+    t.string "password_digest"
     t.string "sala"
     t.string "email"
     t.string "telefone"
@@ -51,6 +53,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.integer "inicio"
     t.integer "termino"
     t.text "resumo"
+    t.text "documento"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

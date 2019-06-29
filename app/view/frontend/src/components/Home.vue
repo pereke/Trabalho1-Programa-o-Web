@@ -1,6 +1,6 @@
 <template>
     <v-layout style="height: 100%;" row wrap class="backgroundImage">
-        <v-flex hidden-xs-only sm6 md8 lg9> 
+        <v-flex hidden-xs-only sm6 md8 lg9>
           <v-container>
             <v-icon style="font-size: 100px;" color="white">school</v-icon>
             <span class="display-1 white--text">SISTEMA DE GERENCIAMENTO PARA PROFESSOR</span>
@@ -13,7 +13,7 @@
             <v-container class="px-5">
                 <h1 class="headline mb-2 grey--text text--darken-3 font-weight-regular">Login</h1>
                 <p class="mb-5 body-2 grey--text text--darken-1 font-weight-regular" >Entre com seu login e senha cadastrado</p>
-                
+
                 <v-form ref="formLogin">
                   <v-text-field
                     label="E-mail"
@@ -21,7 +21,7 @@
                     v-model="email"
                     :rules="[rules.required, rules.email]">
                   </v-text-field>
-                  <v-text-field 
+                  <v-text-field
                     label="Senha"
                     solo
                     v-model="password"
@@ -30,12 +30,10 @@
                     :rules="[rules.required]"
                     @click:append="showPassword = !showPassword">
                   </v-text-field>
-                  <router-link to="/paginanavegacao">
-                    <v-btn
-                    class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3 @click="submit()">
-                    Login
-                    </v-btn>
-                  </router-link>
+                  <v-btn @click="signin()"
+                  class="text-capitalize font-weight-regular" color="blue lighten-2" block  dark mb-3>
+                  Login
+                  </v-btn>
                   </v-form>
                 <router-link to="/contato">
                   <v-btn class="text-capitalize font-weight-regular" color="#3b5998" block  dark>Contato</v-btn>
@@ -74,14 +72,40 @@
         }
       }
     },
-
+    created () {
+        this.checkSignedIn()
+    },
+    updated () {
+        this.checkSignedIn()
+    },
     methods:{
-      submit(){
-        if(this.$refs.formLogin.validate()){
-          alert('Dados login enviados.')
+        signin () {
+            this.$http.plain.post('/signin', { email: this.email, password: this.password })
+            .then(response => this.signinSuccessful(response))
+            .catch(error => this.signinFailed(error))
+        },
+        signinSuccessful (response) {
+            if (!response.data.csrf) {
+                this.signinFailed(response)
+                return
+            }
+            localStorage.csrf = response.data.csrf
+            localStorage.signedIn = true
+            this.error = ''
+            this.$router.replace('/paginanavegacao')
+        },
+        signinFailed (error) {
+            this.error = (error.response && error.response.data && error.response.data.error) || ''
+            delete localStorage.csrf
+            delete localStorage.signedIn
+        },
+        checkSignedIn () {
+            if (localStorage.signedIn) {
+                this.$router.replace('/paginanavegacao')
+            }
         }
-      }
+
     }
   }
-  
+
 </script>

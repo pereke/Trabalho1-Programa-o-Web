@@ -3,4 +3,5 @@ class Aluno < ApplicationRecord
     validates :nome, presence: true
     validates :categoria, presence: true
     validates :curso, presence: true
+    validates :matricula, presence: true
 end

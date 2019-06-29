@@ -5,9 +5,10 @@
                 <v-flex xs4>
                     <v-container px-5>
                         <v-card>
-                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Professor:  Rafael Durelli</label><br>
-                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">E-mail: durelli@ufla.br</label><br>
-                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Telefone: (35) 9 9943-5476</label>  
+                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Professor:  {{ professor.nomeProfessor }}</label><br>
+                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">E-mail: {{ professor.email }}</label><br>
+                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Telefone: {{ professor.telefone }}</label><br>
+                        <label class="grey--text text--darken-3 font-weight-regular" style="font-size:20px;">Sala: {{ professor.sala }}</label>
                         </v-card>
                     </v-container>
                 </v-flex>
@@ -17,7 +18,7 @@
                             <v-card>
                                 <v-card-title primary-title>
                                 <div>
-                                Lorem ipsum sagittis ullamcorper iaculis viverra magna nam hac ipsum, fermentum lacus fermentum proin erat convallis class ut, bibendum rhoncus donec nulla class aliquam vitae lorem. placerat magna varius mauris faucibus sem sodales aliquet porttitor aptent eros hendrerit eu erat donec, odio dictumst aenean luctus litora condimentum pretium rhoncus aptent accumsan donec litora praesent. volutpat porttitor netus ad feugiat porta tortor a, aenean platea imperdiet amet rhoncus nullam cubilia, at quam praesent eros vulputate proin. aptent neque eget porttitor faucibus feugiat a sagittis elit bibendum, tincidunt ultrices ad ipsum congue dolor per placerat pharetra, ad posuere lacus fringilla dolor rutrum cursus nunc. 
+                                {{ professor.formacao }}
                                 </div>
                                 </v-card-title>
                             </v-card>
@@ -27,7 +28,7 @@
         </v-container>
         <v-container px-5>
             <v-dialog v-model="dialog">
-            
+
             <template v-slot:activator="{ on }">
                 <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Editar Informações</v-btn>
             </template>
@@ -45,7 +46,7 @@
             </v-dialog>
         </v-container>
     </v-container>
-    
+
 </template>
 
 <style>
@@ -61,7 +62,18 @@
         },
         data() {
             return {
+                professor: Object,
                 dialog: false
+            }
+        },
+        created() {
+            this.$http.secured.get('/api/v1/professors')
+            .then(response => { this.professor = response.data.data[0] })
+            .catch(error => this.setError(error, 'Algo deu errado!'))
+        },
+        methods: {
+            setError (error, text) {
+                this.error = (error.response && error.response.data && error.response.data.error) || text
             }
         }
     }

@@ -1,7 +1,7 @@
 module Api
   module V1
     class AulasController < ApplicationController
-      skip_before_action :verify_authenticity_token
+      before_action :authorize_access_request!
 
       def index
         aulas = Aula.order('id DESC')

@@ -15,6 +15,7 @@ import Alunos from './components/Alunos.vue'
 import Publicacoes from './components/Publicacoes.vue'
 import ProjetosPesquisa from './components/ProjetosPesquisa.vue'
 
+
 // Componentes de edição alcançáveis a partir de seu respectivo componente
 import EditarPerfil from './components/EditarPerfil.vue'
 import EditarAulas from './components/EditarAulas.vue'
@@ -27,7 +28,6 @@ Vue.use(Router)
 
 export default new Router({
   mode: 'history',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',

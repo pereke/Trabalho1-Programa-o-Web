@@ -68,14 +68,50 @@
                 const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
                 return pattern.test(value) || 'E-mail inválido.'
                 }
-            }
+            },
+            id: String,
+            password: '',
+            email: String,
+            nomeCompleto: String,
+            sala: String,
+            telefone: String,
+            formacao: String,
+            professor: Object
         }),
+        created() {
+            this.$http.secured.get('/api/v1/professors')
+                .then(response => {
+                    this.professor = response.data.data[0]
+                    this.id = this.professor.id
+                    this.email = this.professor.email
+                    this.nomeCompleto = this.professor.nomeProfessor
+                    this.sala = this.professor.sala
+                    this.telefone = this.professor.telefone
+                    this.formacao = this.professor.formacao
+                })
+                .catch(error => this.setError(error, 'Algo deu errado!'))
+
+        },
         methods: {
         fechaDialogo() {
             this.$emit('fechar')
         },
         salvarPerfil() {
+            this.$http.secured.patch(`/api/v1/professors/${this.id}`, {
+
+                        nomeProfessor: this.nome,
+                        email: this.email,
+                        sala: this.sala,
+                        telefone: this.telefone,
+                        formacao: this.formacao,
+                        password: this.password
+
+                }
+            )
             this.$emit('salvar')
+        },
+        setError (error, text) {
+            this.error = (error.response && error.response.data && error.response.data.error) || text
         }
     }
     }

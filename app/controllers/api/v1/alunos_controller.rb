@@ -2,7 +2,7 @@ module Api
   module V1
     class AlunosController < ApplicationController
       # before_action :set_aluno, only: [:show, :edit, :update, :destroy]
-      skip_before_action :verify_authenticity_token
+      before_action :authorize_access_request!
 
       def index
         alunos = Aluno.order('id DESC')
@@ -44,9 +44,9 @@ module Api
       private
 
       def aluno_params
-        params.permit(:nome, :categoria, :curso)
+        params.permit(:nome, :categoria, :curso, :matricula)
       end
-      
+
     end
   end
 end

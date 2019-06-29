@@ -19,6 +19,7 @@
             required
         ></v-text-field>
         <v-select
+            v-model="categoria"
             :items="categorias"
             label="Categoria"
         ></v-select>
@@ -36,10 +37,13 @@
 
 <script>
 export default {
+    props: ['aluno'],
     data: () => ({
         valid: false,
         nomeCompleto: '',
         matricula: '',
+        categoria:'',
+        curso: '',
         nomeCompletoRules: [
             v => !!v || 'Preenchimento necessário'
         ],
@@ -49,8 +53,16 @@ export default {
         cursoRules: [
             v => !!v || 'Preenchimento necessário'
         ],
-        categorias: ['Graduação', 'Pós-graduação'] 
+        categorias: ['Graduação', 'Pós-graduação']
     }),
+    created() {
+        if(this.aluno) {
+            this.nomeCompleto = this.aluno.nome
+            this.matricula = this.aluno.matricula
+            this.curso = this.aluno.curso
+            this.categoria = this.aluno.categoria
+        }
+    },
     methods: {
         fechaDialogo() {
             this.$emit('fechar')

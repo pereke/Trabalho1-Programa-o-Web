@@ -7,7 +7,7 @@
                 class="elevation-1"
             >
                 <template v-slot:items="props">
-                <td>{{ props.item.nome }}</td>
+                <td>{{ props.item.nomePublicacao }}</td>
                 <td class="text-xs-left">{{ props.item.data}}</td>
                 <td class="text-xs-left">{{ props.item.categoria }}</td>
                 <td class="text-xs-center">
@@ -41,7 +41,7 @@
         <v-flex xs12>
         <v-container px-5>
             <v-dialog v-model="dialog">
-            
+
             <template v-slot:activator="{ on }">
                 <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Publicação</v-btn>
             </template>
@@ -60,7 +60,7 @@
         </v-container>
         </v-flex>
     </v-layout>
-    
+
 </template>
 
 
@@ -84,27 +84,19 @@
                 { text: 'Arquivo Bibtex', value: 'arquivoBib',  sortable: false, align: 'center' },
                 { text: 'Ações', value: 'nome', sortable: false}
                 ],
-                publicacoes: [
-                {
-                    nome: 'Desfragmentar arquivos ajuda o Windows',
-                    data: '12/12/14',
-                    categoria: 'Periódico',
-                    arquivoBib: '<v-btn>ArquivoBib</v-btn>',
-                    editar: '<v-btn>Editar</v-btn>',
-                    excluir: '<v-btn>Excluir</v-btn>'
-                },
-                {
-                    nome: 'Derrentendo seu HD',
-                    data: '20/05/18',
-                    categoria: 'Resumo',
-                    arquivoBib: '<v-btn>ArquivoBib</v-btn>',
-                    editar: '<v-btn>Editar</v-btn>',
-                    excluir: '<v-btn>Excluir</v-btn>'
-                }
-                ]
+                publicacoes: []
             }
         },
+        created() {
+            
+            this.$http.secured.get('/api/v1/publicacaos')
+            .then(response => { this.publicacoes = response.data.data })
+            .catch(error => this.setError(error, 'Algo deu errado!'))
+        },
         methods: {
+            setError (error, text) {
+                this.error = (error.response && error.response.data && error.response.data.error) || text
+            },
             fecharEditarPublicacao() {
                 this.dialog2 = false
             },

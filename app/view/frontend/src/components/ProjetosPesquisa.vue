@@ -7,9 +7,9 @@
                 class="elevation-1"
             >
                 <template v-slot:items="props">
-                <td>{{ props.item.nome }}</td>
-                <td class="text-xs-left">{{ props.item.anoInicio}}</td>
-                <td class="text-xs-left">{{ props.item.anoTermino }}</td>
+                <td>{{ props.item.nomeProjeto }}</td>
+                <td class="text-xs-left">{{ props.item.inicio}}</td>
+                <td class="text-xs-left">{{ props.item.termino }}</td>
                 <td class="text-xs-center">
                     <v-icon small>insert_drive_file</v-icon>
                 </td>
@@ -41,7 +41,7 @@
         <v-flex xs12>
         <v-container px-5>
             <v-dialog v-model="dialog">
-            
+
             <template v-slot:activator="{ on }">
                 <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Projeto de Pesquisa</v-btn>
             </template>
@@ -60,7 +60,7 @@
         </v-container>
     </v-flex>
     </v-layout>
-    
+
 </template>
 
 
@@ -84,23 +84,18 @@
                 { text: 'Documento', value: 'documento',  sortable: false, align: 'center' },
                 { text: 'Ações', value: 'nome', sortable: false}
                 ],
-                projetos_pesquisa: [
-                {
-                    nome: 'Ação dos Ratos nas Plantas',
-                    anoInicio: '18/05/09',
-                    anoTermino: '18/05/10',
-                    documento: '<v-btn>Documento</v-btn>',
-                },
-                {
-                    nome: 'Ação dos Ratos nos HDs',
-                    anoInicio: '13/07/09',
-                    anoTermino: '13/07/10',
-                    documento: '<v-btn>Doc</v-btn>',
-                }
-                ]
+                projetos_pesquisa: []
             }
         },
+        created() {
+            this.$http.secured.get('/api/v1/projetos')
+            .then(response => { this.projetos_pesquisa = response.data.data })
+            .catch(error => this.setError(error, 'Algo deu errado!'))
+        },
         methods: {
+            setError (error, text) {
+                this.error = (error.response && error.response.data && error.response.data.error) || text
+            },
             fecharEditarProjetoPesquisa() {
                 this.dialog2 = false
             },

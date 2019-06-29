@@ -37,7 +37,7 @@
         <v-flex xs12>
         <v-container px-5>
             <v-dialog v-model="dialog">
-            
+
             <template v-slot:activator="{ on }">
                 <v-btn class="text-capitalize font-weight-regular" color="#3b5998"  dark v-on="on" >Adicionar Aula</v-btn>
             </template>
@@ -56,7 +56,7 @@
         </v-container>
         </v-flex>
     </v-layout>
-    
+
 </template>
 
 
@@ -69,7 +69,7 @@
         components: {
             EditarAulas
         },
-        data () {            
+        data () {
             return {
                 dialog: false,
                 dialog2: false,
@@ -78,19 +78,18 @@
                 { text: 'Categoria', value: 'categoria',  sortable: false },
                 { text: 'Ações', value: 'nomeAula', sortable: false, align: 'center' },
                 ],
-                aulas: [
-                {
-                    nomeAula: 'Hackeando o FaceBook I',
-                    categoria: 'Pós Graduação'
-                },
-                {
-                    nomeAula: 'Formatando Computadores',
-                    categoria: 'Graduação'
-                }
-                ]
+                aulas: []
             }
         },
-         methods: {
+        created() {
+            this.$http.secured.get('/api/v1/aulas')
+            .then(response => { this.aulas = response.data.data })
+            .catch(error => this.setError(error, 'Algo deu errado!'))
+        },
+        methods: {
+            setError (error, text) {
+                this.error = (error.response && error.response.data && error.response.data.error) || text
+            },
             fecharEditarAula() {
                 this.dialog2 = false
             },

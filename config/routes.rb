@@ -8,4 +8,12 @@ Rails.application.routes.draw do
       resources :publicacaos
     end
   end
+
+  root to: "home#index"
+
+
+  post "refresh", controller: :refresh, action: :create
+  post "signin", controller: :signin, action: :create
+  delete "signin", controller: :signin, action: :destroy
+
 end

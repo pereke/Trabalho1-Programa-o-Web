@@ -2,6 +2,7 @@
 Professor.create({
     nomeProfessor: 'Rafael Durelli',
     sala: '22B',
+    password: '123456',
     email: 'rafa.durelli@email.com',
     telefone: '(25)5555-6666'
 })
@@ -9,19 +10,22 @@ Professor.create({
 Aluno.create({
     nome: "Ítalo Silva",
     categoria: "Graduação",
-    curso: "Ciência da Computação"
+    curso: "Ciência da Computação",
+    matricula: "201867668"
 })
 
 Aluno.create({
     nome: "Pedro Henrique",
     categoria: "Pós-graduação",
-    curso: "Ciência da Computação"
+    curso: "Ciência da Computação",
+    matricula: "201217678"
 })
 
 Aluno.create({
     nome: "Jonas Brother",
     categoria: "Graduação",
-    curso: "Sistemas de Informação"
+    curso: "Sistemas de Informação",
+    matricula: "203978897"
 })
 
 Projeto.create({
