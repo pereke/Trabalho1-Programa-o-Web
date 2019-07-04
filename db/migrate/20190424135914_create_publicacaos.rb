@@ -4,6 +4,7 @@ class CreatePublicacaos < ActiveRecord::Migration[5.2]
       t.string :nomePublicacao
       t.string :categoria
       t.string :arquivoBib
+      t.string :data
 
       t.timestamps
     end

@@ -10,7 +10,7 @@
                 <v-btn @click="mudaPagina('aulas')" flat>Aulas</v-btn>
                 <v-btn @click="mudaPagina('publicacoes')" flat>Publicações</v-btn>
             </v-btn-toggle>
-            <v-btn to="/" icon flat color="red">
+            <v-btn  @click= "signOut()" icon flat color="red">
             <v-icon>clear</v-icon>
             </v-btn>
             </v-toolbar-items>
@@ -32,6 +32,11 @@ export default {
     methods: {
         mudaPagina(novaPagina) {
             this.$emit('mudarPagina', novaPagina)
+        },
+        signOut() {
+            this.$http.secured.delete('/signin')
+            delete localStorage.csrf
+            delete localStorage.signedIn
         }
     }
 }

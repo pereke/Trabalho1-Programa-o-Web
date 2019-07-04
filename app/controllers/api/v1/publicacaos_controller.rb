@@ -44,7 +44,7 @@ module Api
       private
 
       def publicacao_params
-        params.permit(:nomePublicacao, :categoria, :arquivoBib)
+        params.permit(:nomePublicacao, :categoria, :arquivoBib, :data)
       end
 
     end

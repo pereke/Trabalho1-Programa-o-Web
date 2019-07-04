@@ -44,7 +44,7 @@ module Api
       private
 
       def professor_params
-        params.permit(:nomeProfessor, :formacao, :sala, :email, :telefone, :password, :id)
+        params.require(:professor).permit(:nomeProfessor, :formacao, :sala, :email, :telefone, :password, :id, :grupoPesquisa)
       end
     end
   end

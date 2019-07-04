@@ -9,6 +9,7 @@
         <v-text-field
             v-model="matricula"
             :rules="matriculaRules"
+            mask="#########"
             label="Num de Matrícula"
             required
         ></v-text-field>
@@ -54,7 +55,7 @@ export default {
         cursoRules: [
             v => !!v || 'Preenchimento necessário'
         ],
-        categorias: ['Graduação', 'Pós-graduação']
+        categorias: ['Iniciação Científica', 'Mestrado', 'Doutorado', 'Pós-doutorado']
     }),
     created() {
         if(!this.novo) {

@@ -10,7 +10,7 @@ module Api
 
       def show
         projeto = Projeto.find(params[:id])
-        render json: {status: 'SUCCESS', message: 'Projeto de Pesquisa carregado', data: projeto}, status: :ok
+        render json: {status: 'SUCCESS', message: 'Projeto de Pesquisa carregado', data: projeto, alunos: projeto.alunos}, status: :ok
       end
 
       def create
@@ -43,7 +43,7 @@ module Api
       private
 
       def projeto_params
-        params.permit(:nomeProjeto, :inicio, :termino, :documento, :resumo)
+        params.permit(:nomeProjeto, :inicio, :termino, :documento, :resumo, :aluno_ids => [])
       end
     end
   end

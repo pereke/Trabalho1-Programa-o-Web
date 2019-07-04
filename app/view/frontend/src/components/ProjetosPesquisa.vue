@@ -59,7 +59,11 @@
                 > Adicionar Projeto de Pesquisa
                 </v-card-title>
                 <v-card-text>
-                    <EditarProjetosPesquisa @fechar="fecharAdicionarProjetoPesquisa()" @salvar="salvarAdicionarProjetoPesquisa()" />
+                    <app-editar-projetos-pesquisa
+                        v-bind:novo="true"
+                        @fechar="fecharAdicionarProjetoPesquisa()"
+                        @salvar="fecharAdicionarProjetoPesquisa()" >
+                    </app-editar-projetos-pesquisa>
                 </v-card-text>
             </v-card>
             </v-dialog>
@@ -109,8 +113,9 @@
                 this.dialogNote[projeto.id] = false
                 this.atualizarTabela()
             },
-            fecharAdicionarProjetoPesquisa(projeto) {
-                this.dialogNote[projeto.id] = false
+            fecharAdicionarProjetoPesquisa() {
+                this.dialog = false
+                this.atualizarTabela()
             },
             deletarProjetoPesquisa(projeto) {
                 this.$http.secured.delete(`/api/v1/projetos/${projeto.id}`)

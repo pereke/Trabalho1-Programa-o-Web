@@ -14,7 +14,7 @@
                     <v-icon small>insert_drive_file</v-icon>
                 </td>
                 <td class="justify-center layout px-0">
-                    <v-dialog v-model="dialog2">
+                    <v-dialog v-model="dialogNote[props.item.id]" :key="props.item.id">
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" icon>
                                 <v-icon small class="mr-2">edit</v-icon>
@@ -27,11 +27,17 @@
                             > Editar Publicação
                             </v-card-title>
                             <v-card-text>
-                                <EditarPublicacoes @fechar="fecharEditarPublicacao()" @salvar="salvarEditarPublicacao()"/>
+                                <app-editar-publicacoes
+                                    v-bind:key="props.item.id"
+                                    v-bind:idpublicacao="props.item.id"
+                                    v-bind:novo="false"
+                                    @fechar="fecharEditarPublicacao(props.item)"
+                                    @salvar="fecharEditarPublicacao(props.item)">
+                                </app-editar-publicacoes>
                             </v-card-text>
                         </v-card>
                     </v-dialog>
-                    <v-btn icon v-on="deletarPublicacao">
+                    <v-btn icon v-on:click="deletarPublicacao(props.item)">
                         <v-icon small>delete</v-icon>
                     </v-btn>
                 </td>
@@ -53,7 +59,11 @@
                 > Adicionar Publicação
                 </v-card-title>
                 <v-card-text>
-                    <EditarPublicacoes @fechar="fecharAdicionarPublicacao()" @salvar="salvarAdicionarPublicacao()" />
+                    <app-editar-publicacoes
+                        v-bind:novo="true"
+                        @fechar="fecharAdicionarPublicacao()"
+                        @salvar="fecharAdicionarPublicacao()" >
+                    </app-editar-publicacoes>
                 </v-card-text>
             </v-card>
             </v-dialog>
@@ -71,12 +81,12 @@
     import EditarPublicacoes from './EditarPublicacoes.vue'
     export default {
         components: {
-            EditarPublicacoes
+            appEditarPublicacoes: EditarPublicacoes
         },
         data () {
             return {
                 dialog: false,
-                dialog2: false,
+                dialogNote: {},
                 headers: [
                 { text: 'Nome da Publicação', value: 'nome',  sortable: false, align: 'center' },
                 { text: 'Data', value: 'data',  sortable: false },
@@ -88,31 +98,29 @@
             }
         },
         created() {
-            
-            this.$http.secured.get('/api/v1/publicacaos')
-            .then(response => { this.publicacoes = response.data.data })
-            .catch(error => this.setError(error, 'Algo deu errado!'))
+            this.atualizarTabela()
         },
         methods: {
             setError (error, text) {
                 this.error = (error.response && error.response.data && error.response.data.error) || text
             },
-            fecharEditarPublicacao() {
-                this.dialog2 = false
+            atualizarTabela() {
+                this.$http.secured.get('/api/v1/publicacaos')
+                    .then(response => { this.publicacoes = response.data.data })
+                    .catch(error => this.setError(error, 'Algo deu errado!'))
+            },
+            fecharEditarPublicacao(publicacao) {
+                this.dialogNote[publicacao.id] = false
+                this.atualizarTabela()
             },
             fecharAdicionarPublicacao() {
                 this.dialog = false
+                this.atualizarTabela
             },
-            salvarEditarPublicacao() {
-                // TODO métodos de edição de publicacao
-                this.dialog2 = false
-            },
-            salvarAdicionarPublicacao() {
-                // TODO métodos de adição de publicacao
-                this.dialog = false
-            },
-            deletarPublicacao() {
-                // TODO deletar publicacao
+            deletarPublicacao(publicacao) {
+                this.$http.secured.delete(`/api/v1/publicacaos/${publicacao.id}`)
+                    .then(this.publicacoes.splice(this.publicacoes.indexOf(publicacao), 1))
+                    .catch(error => this.setError(error, 'Nao consegue deletar publicacao'))
             }
         }
     }

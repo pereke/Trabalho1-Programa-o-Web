@@ -15,14 +15,6 @@
             @click:append="showPassword = !showPassword"
         ></v-text-field>
         <v-text-field
-            v-model="password"
-            label="Confirmar Nova Senha"
-            :append-icon="showPassword ? 'visibility' : 'visibility_off'"
-            :type="showPassword ? 'text' : 'password'"
-            :rules="[rules.required]"
-            @click:append="showPassword = !showPassword"
-        ></v-text-field>
-        <v-text-field
             v-model="nomeCompleto"
             :rules="nomeCompletoRules"
             label="Nome Completo"
@@ -41,11 +33,15 @@
             required
        ></v-text-field>
        <v-text-field
+           v-model="grupoPesquisa"
+           label = "Grupo de Pesquisa"
+           >
+       </v-text-field>
+       <v-textarea
+            name="formacao"
             v-model="formacao"
-            :rules="formacaoRules"
             label="Formação"
-            required
-       ></v-text-field>
+       ></v-textarea>
        <v-btn color="success" @click="salvarPerfil">Salvar </v-btn>
        <v-btn color="error"  @click="fechaDialogo">Voltar </v-btn>
    </v-form>
@@ -73,6 +69,7 @@
             password: '',
             email: String,
             nomeCompleto: String,
+            grupoPesquisa: String,
             sala: String,
             telefone: String,
             formacao: String,
@@ -88,6 +85,7 @@
                     this.sala = this.professor.sala
                     this.telefone = this.professor.telefone
                     this.formacao = this.professor.formacao
+                    this.grupoPesquisa = this.professor.grupoPesquisa
                 })
                 .catch(error => this.setError(error, 'Algo deu errado!'))
 
@@ -97,18 +95,19 @@
             this.$emit('fechar')
         },
         salvarPerfil() {
+            this.$emit('salvar'),
             this.$http.secured.patch(`/api/v1/professors/${this.id}`, {
 
-                        nomeProfessor: this.nome,
+                        nomeProfessor: this.nomeCompleto,
                         email: this.email,
                         sala: this.sala,
                         telefone: this.telefone,
                         formacao: this.formacao,
-                        password: this.password
+                        password: this.password,
+                        grupoPesquisa: this.grupoPesquisa
 
                 }
             )
-            this.$emit('salvar')
         },
         setError (error, text) {
             this.error = (error.response && error.response.data && error.response.data.error) || text

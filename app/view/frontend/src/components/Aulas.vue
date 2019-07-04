@@ -9,8 +9,11 @@
                 <template v-slot:items="props">
                 <td>{{ props.item.nomeAula }}</td>
                 <td class="text-xs-left">{{ props.item.categoria}}</td>
+                <td class="text-xs-center">
+                    <v-icon small>insert_drive_file</v-icon>
+                </td>
                 <td class="justify-center layout px-0">
-                    <v-dialog v-model="dialog2">
+                    <v-dialog v-model="dialogNote[props.item.id]" :key="props.item.id">
                         <template v-slot:activator="{ on }">
                             <v-btn v-on="on" icon>
                                 <v-icon small class="mr-2">edit</v-icon>
@@ -23,11 +26,18 @@
                             > Editar Aula
                             </v-card-title>
                             <v-card-text>
-                                <EditarAulas @fechar="fecharEditarAula()" @salvar="salvarEditarAula()"/>
+                                <app-editar-aulas
+                                    v-bind:key="props.item.id"
+                                    v-bind:idaula="props.item.id"
+                                    v-bind:novo="false"
+                                    @fechar="fecharEditarAula(props.item)"
+                                    @salvar="fecharEditarAula(props.item)"
+                                    >
+                                </app-editar-aulas>
                             </v-card-text>
                         </v-card>
                     </v-dialog>
-                    <v-btn icon v-on="deletarProjetoPesquisa">
+                    <v-btn icon v-on:click="deletarAula(props.item)">
                         <v-icon small>delete</v-icon>
                     </v-btn>
                 </td>
@@ -49,7 +59,10 @@
                 > Adicionar Aula
                 </v-card-title>
                 <v-card-text>
-                    <EditarAulas @fechar="fecharAdicionarAula()" @salvar="salvarAdicionarAula()" />
+                    <app-editar-aulas
+                    v-bind:novo="true"
+                    @fechar="fecharAdicionarAula()"
+                    @salvar="fecharAdicionarAula()" />
                 </v-card-text>
             </v-card>
             </v-dialog>
@@ -67,45 +80,45 @@
     import EditarAulas from './EditarAulas.vue'
     export default {
         components: {
-            EditarAulas
+            appEditarAulas: EditarAulas
         },
         data () {
             return {
                 dialog: false,
-                dialog2: false,
+                dialogNote: {},
                 headers: [
                 { text: 'Nome da Aula', value: 'nomeAula', align: 'center',  sortable: false },
                 { text: 'Categoria', value: 'categoria',  sortable: false },
-                { text: 'Ações', value: 'nomeAula', sortable: false, align: 'center' },
+                { text: 'Material didático', value: 'matDidatico', align: 'center',  sortable: false },
+                { text: 'Ações', value: 'acoes', sortable: false, align: 'center' },
                 ],
                 aulas: []
             }
         },
         created() {
-            this.$http.secured.get('/api/v1/aulas')
-            .then(response => { this.aulas = response.data.data })
-            .catch(error => this.setError(error, 'Algo deu errado!'))
+            this.atualizarTabela()
         },
         methods: {
             setError (error, text) {
                 this.error = (error.response && error.response.data && error.response.data.error) || text
             },
-            fecharEditarAula() {
-                this.dialog2 = false
+            atualizarTabela() {
+                this.$http.secured.get('/api/v1/aulas')
+                    .then(response => { this.aulas = response.data.data })
+                    .catch(error => this.setError(error, 'Algo deu errado!'))
+            },
+            fecharEditarAula(aula) {
+                this.dialogNote[aula.id] = false
+                this.atualizarTabela()
             },
             fecharAdicionarAula() {
                 this.dialog = false
+                this.atualizarTabela()
             },
-            salvarEditarAula() {
-                // TODO métodos de edição de Aula
-                this.dialog2 = false
-            },
-            salvarAdicionarAula() {
-                // TODO métodos de adição de Aula
-                this.dialog = false
-            },
-            deletarAula() {
-                // TODO deletar aula
+            deletarAula(aula) {
+                this.$http.secured.delete(`/api/v1/aulas/${aula.id}`)
+                    .then(this.aulas.splice(this.aulas.indexOf(aula), 1))
+                    .catch(error => this.setError(error, 'Nao consegue deletar aula'))
             }
         }
     }

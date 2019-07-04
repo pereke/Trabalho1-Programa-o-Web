@@ -10,7 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_26_000040) do
+ActiveRecord::Schema.define(version: 2019_07_02_194620) do
+
+  create_table "active_storage_attachments", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "record_type", null: false
+    t.integer "record_id", null: false
+    t.integer "blob_id", null: false
+    t.datetime "created_at", null: false
+    t.index ["blob_id"], name: "index_active_storage_attachments_on_blob_id"
+    t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
+  end
+
+  create_table "active_storage_blobs", force: :cascade do |t|
+    t.string "key", null: false
+    t.string "filename", null: false
+    t.string "content_type"
+    t.text "metadata"
+    t.bigint "byte_size", null: false
+    t.string "checksum", null: false
+    t.datetime "created_at", null: false
+    t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
+  end
 
   create_table "alunos", force: :cascade do |t|
     t.string "nome"
@@ -22,8 +43,8 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
   end
 
   create_table "alunos_projetos", id: false, force: :cascade do |t|
-    t.integer "aluno_id", null: false
-    t.integer "projeto_id", null: false
+    t.integer "aluno_id"
+    t.integer "projeto_id"
     t.index ["aluno_id"], name: "index_alunos_projetos_on_aluno_id"
     t.index ["projeto_id"], name: "index_alunos_projetos_on_projeto_id"
   end
@@ -32,7 +53,6 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.string "nomeAula"
     t.string "categoria"
     t.integer "quantidade"
-    t.string "materialDidatico"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -44,6 +64,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.string "sala"
     t.string "email"
     t.string "telefone"
+    t.string "grupoPesquisa"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -62,6 +83,7 @@ ActiveRecord::Schema.define(version: 2019_04_26_000040) do
     t.string "nomePublicacao"
     t.string "categoria"
     t.string "arquivoBib"
+    t.string "data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

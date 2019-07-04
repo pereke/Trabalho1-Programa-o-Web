@@ -7,7 +7,7 @@ class CreateProfessors < ActiveRecord::Migration[5.2]
       t.string :sala
       t.string :email
       t.string :telefone
-
+      t.string :grupoPesquisa
       t.timestamps
     end
   end

@@ -9,12 +9,13 @@ module Api
       end
 
       def show
-        aulas = Aula.find(params[:id])
+        aula = Aula.find(params[:id])
         render json: {status: 'SUCCESS', message: 'Aula carregada', data: aula}, status: :ok
       end
 
       def create
         aula = Aula.new(aula_params)
+        attach_main_material(aula) if aula_params[:materialDidatico].present?
 
         if aula.save
           render json: {status: 'SUCCESS', message: 'Aula salva', data: aula}, status: :ok
@@ -33,6 +34,7 @@ module Api
       def update
         aula = Aula.find(params[:id])
         if aula.update_attributes(aula_params)
+          attach_main_material(aula) if aula_params[:materialDidatico].present?
           render json: {status: 'SUCCESS', message: 'Aula atualizada', data: aula}, status: :ok
         else
           render json: {status: 'ERROR', message: 'Aula nao atualizada', data: aula.errors},
@@ -41,6 +43,10 @@ module Api
       end
 
       private
+
+      def attach_main_material(aula)
+        aula.materialDidatico.attach(aula_params[:materialDidatico])
+      end
 
       def aula_params
         params.permit(:nomeAula, :categoria, :materialDidatico, :quantidade)

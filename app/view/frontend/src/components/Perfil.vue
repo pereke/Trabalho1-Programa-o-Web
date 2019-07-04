@@ -40,7 +40,7 @@
                 > Editar Informações de Perfil
                 </v-card-title>
                 <v-card-text>
-                    <EditarPerfil />
+                    <EditarPerfil @fechar="fechar()" @salvar="fechar()"/>
                 </v-card-text>
             </v-card>
             </v-dialog>
@@ -67,13 +67,19 @@
             }
         },
         created() {
-            this.$http.secured.get('/api/v1/professors')
-            .then(response => { this.professor = response.data.data[0] })
-            .catch(error => this.setError(error, 'Algo deu errado!'))
+            this.atualizarTabela()
         },
         methods: {
             setError (error, text) {
                 this.error = (error.response && error.response.data && error.response.data.error) || text
+            },
+            fechar() {
+                this.dialog = false
+            },
+            atualizarTabela() {
+                this.$http.secured.get('/api/v1/professors')
+                .then(response => { this.professor = response.data.data[0] })
+                .catch(error => this.setError(error, 'Algo deu errado!'))
             }
         }
     }

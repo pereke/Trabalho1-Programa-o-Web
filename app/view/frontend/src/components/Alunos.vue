@@ -54,7 +54,11 @@
                     > Adicionar Aluno
                     </v-card-title>
                     <v-card-text>
-                        <EditarAlunos @fechar="fecharAdicionarAluno()" @salvar="fecharAdicionarAluno()"/>
+                        <app-editar-alunos
+                        v-bind:novo="true"
+                        @fechar="fecharAdicionarAluno()"
+                        @salvar="fecharAdicionarAluno()">
+                    </app-editar-alunos>
                     </v-card-text>
                 </v-card>
             </v-dialog>
@@ -85,8 +89,8 @@
                 { text: 'Nome', value: 'nome', align: 'center', sortable: false },
                 { text: 'Matricula', value: 'matricula', sortable: false },
                 { text: 'Curso', value: 'curso', sortable: false},
-                { text: 'Categoria', value: 'categoria', sortable: false },
-                { text: 'Ações', value: 'nome', sortable: false },
+                { text: 'Categoria', value: 'categoria', sortable: false},
+                { text: 'Ações', value: 'nome', sortable: false},
                 ],
                 alunos: [],
             }
@@ -109,6 +113,7 @@
             },
             fecharAdicionarAluno() {
                 this.dialog = false
+                this.atualizarTabela()
             },
             deletarAluno(aluno) {
                 this.$http.secured.delete(`/api/v1/alunos/${aluno.id}`)

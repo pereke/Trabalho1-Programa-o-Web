@@ -4,7 +4,6 @@ class CreateAulas < ActiveRecord::Migration[5.2]
       t.string :nomeAula
       t.string :categoria
       t.integer :quantidade
-      t.string :materialDidatico
       t.timestamps
     end
   end

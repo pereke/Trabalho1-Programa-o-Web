@@ -10,20 +10,32 @@
             v-model="anoInicio"
             :rules="anoInicioRules"
             label="Ano de Início"
+            mask="####"
             required
         ></v-text-field>
         <v-text-field
             v-model="anoTermino"
             :rules="anoTerminoRules"
             label="Ano de Término"
+            mask="####"
             required
         ></v-text-field>
-        <v-text-field
+        <v-textarea
+            name="name1"
             v-model="resumo"
-            :rules="resumoRules"
             label="Resumo"
-            required
-        ></v-text-field>
+            hint="Hint text"
+        ></v-textarea>
+        <v-data-table
+            :headers="headersAlunos"
+            :items="alunos"
+            class="elevation-1"
+        >
+            <template v-slot:items="props1">
+            <td>{{ props1.item.nome }}</td>
+            <td>{{ props1.item.matricula}}</td>
+        </template>
+        </v-data-table>
         <!-- TODO inserir tabela com alunos -->
         <v-btn color="success" @click="salvar()">Salvar </v-btn>
         <v-btn color="error"  @click="fecharDialogo()">Voltar </v-btn>
@@ -41,11 +53,16 @@
 export default {
     props: ['idprojeto', 'novo'],
     data: () => ({
+        headersAlunos: [
+        { text: 'Nome', value: 'nome', align: 'center', sortable: false },
+        { text: 'Matricula', value: 'matricula', sortable: false }
+        ],
         valid: false,
         nome: '',
         anoInicio: '',
         anoTermino: '',
         resumo: '',
+        alunos: Object,
         nomeRules: [
             v => !!v || 'Preenchimento necessário'
         ],
@@ -53,9 +70,6 @@ export default {
             v => !!v || 'Preenchimento necessário'
         ],
         anoTerminoRules: [
-            v => !!v || 'Preenchimento necessário'
-        ],
-        resumoRules: [
             v => !!v || 'Preenchimento necessário'
         ],
         projeto: Object
@@ -69,6 +83,7 @@ export default {
                     this.anoInicio = this.projeto.inicio
                     this.anoTermino = this.projeto.termino
                     this.resumo = this.projeto.resumo
+                    this.alunos = response.data.alunos
                     }
                 )
                 .catch(error => this.setError(error, 'Nao consegue achar projeto'))
